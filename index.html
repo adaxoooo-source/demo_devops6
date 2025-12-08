@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>DevOps 6 — Excellence</title>
-    <style>
-        body{margin:0;background:#111 url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920') center/cover fixed;color:#ffd700;font-family:'Playfair Display',serif;height:100vh;display:grid;place-items:center;text-align:center}
-        .card{background:rgba(0,0,0,0.6);padding:100px;border-radius:30px;backdrop-filter:blur(10px)}
-        h1{font-size:8rem;margin:0;letter-spacing:10px}
-        p{font-size:2rem;margin-top:30px}
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="card">
-        <h1>DEVOPS 6</h1>
-        <p>Excellence déployée</p>
-    </div>
-</body>
-</html>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Matrix DevOps</title><style>
+  body{margin:0;background:#000;overflow:hidden;height:100vh}
+  canvas{position:absolute;top:0;left:0}
+  .center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#0f0;font-family:Courier;font-size:5rem;text-shadow:0 0 30px #0f0;z-index:2}
+</style></head><body>
+<div class="center">DEVOPS 6</div>
+<canvas id="c"></canvas>
+<script>
+  const c=document.getElementById('c'),x=c.getContext('2d'),w=c.width=innerWidth,h=c.height=innerHeight;
+  let t='01DEVOPS6'.split(''),f=20,m=Math.max(w,h)/f,d=[],i=0;
+  for(;i<m;i++)d[i]=~~(Math.random()*h);
+  setInterval(()=>{x.fillStyle='rgba(0,0,0,0.05)';x.fillRect(0,0,w,h);x.fillStyle='#0f0';
+    for(i=0;i<m;i++){let r=t[~~(Math.random()*t.length)];x.fillText(r,i*f,d[i]);d[i]+=f;if(d[i]>h&&Math.random()>.95)d[i]=0;}
+  },50);
+</script>
+</body></html>
