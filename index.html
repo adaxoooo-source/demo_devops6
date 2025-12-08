@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr"><head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DevOps ⋅ Clean</title>
+<title>Matrix DevOps</title>
 <style>
-  body{margin:0;background:#fafafa;font-family:-apple-system,system-ui,sans-serif;color:#1d1d1f;height:100vh;display:grid;place-items:center;}
-  .card{background:white;padding:80px 60px;border-radius:28px;box-shadow:0 20px 60px rgba(0,0,0,0.08);text-align:center;max-width:600px;}
-  h1{font-size:4.5rem;font-weight:800;letter-spacing:-2px;margin-bottom:16px;}
-  p{font-size:1.4rem;color:#888;line-height:1.6;}
-  .status{margin-top:40px;font-weight:600;color:#007aff;font-size:1.6rem;}
+  body{margin:0;background:#000;color:#0f0;font-family:'Courier New';overflow:hidden;height:100vh;}
+  canvas{position:absolute;top:0;left:0;}
+  .center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:4rem;text-shadow:0 0 20px #0f0;z-index:2;}
 </style>
 </head><body>
-<div class="card">
-  <h1>DevOps 6</h1>
-  <p>Déploiement réussi avec élégance et simplicité.</p>
-  <div class="status">Pipeline actif • 2025</div>
-</div>
+<div class="center">DEVOPS 6<br><small>WELCOME TO THE REAL</small></div>
+<canvas id="c"></canvas>
+<script>
+const c=document.getElementById('c'),ctx=c.getContext('2d'),w=c.width=window.innerWidth,h=c.height=window.innerHeight;
+let chars='01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホ'.split(''),fontSize=16,cols=w/fontSize,drops=[];
+for(let i=0;i<cols;i++)drops[i]=1;
+function draw(){
+  ctx.fillStyle='rgba(0,0,0,0.05)';ctx.fillRect(0,0,w,h);
+  ctx.fillStyle='#0f0';ctx.font=fontSize+'px monospace';
+  for(let i=0;i<drops.length;i++){
+    let text=chars[Math.floor(Math.random()*chars.length)];
+    ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+    if(drops[i]*fontSize>h&&Math.random()>0.975)drops[i]=0;
+    drops[i]++;
+  }
+}
+setInterval(draw,33);
+</script>
 </body></html>
