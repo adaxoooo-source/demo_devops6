@@ -3,66 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEVOPS 6 • JOYEUX NOËL 2025</title>
+    <title>DEVOPS 6 • NOËL 2025 • ÉDITION APOCALYPTIQUE</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Cinzel+Decorative:wght@900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Cinzel+Decorative:wght@900&family=Orbitron:wght@900&family=Dancing+Script:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="snow"></div>
-    <div class="snow></div>
+    <!-- 10 COUCHES DE NEIGE + PARTICULES -->
+    <div class="snow-layer" id="snow1"></div>
+    <div class="snow-layer" id="snow2"></div>
+    <div class="snow-layer" id="snow3"></div>
+    <div class="snow-layer" id="snow4></div>
+    <div class="snow-layer" id="snow5"></div>
+    <div class="snow-layer" id="snow6"></div>
+    <div class="snow-layer" id="snow7"></div>
+    <div class="snow-layer" id="snow8"></div>
+    <div class="snow-layer" id="snow9"></div>
+    <div class="snow-layer" id="snow10"></div>
+
+    <!-- AURORE + ÉTOILES FILANTES -->
     <div class="aurora"></div>
+    <div class="shooting-stars"></div>
 
-    <div class="christmas-tree">
-        <div class="star">Star</div>
-        <div class="level level1">Tree</div>
-        <div class="level level2">Tree</div>
-        <div class="level level3">Tree</div>
-        <div class="level level4">Tree</div>
-        <div class="level level5">Tree</div>
-        <div class="trunk"></div>
+    <!-- SAPIN GÉANT 3D -->
+    <div class="mega-tree">
+        <div class="star-top">Star</div>
+        <div class="branch b1">Tree</div>
+        <div class="branch b2">Tree</div>
+        <div class="branch b3">Tree</div>
+        <div class="branch b4">Tree</div>
+        <div class="branch b5">Tree</div>
+        <div class="branch b6">Tree</div>
+        <div class="branch b7">Tree</div>
+        <div class="trunk-big"></div>
     </div>
 
-    <div class="gifts">
-        <div class="gift gift1">Gift</div>
-        <div class="gift gift2">Gift</div>
-        <div class="gift gift3">Gift</div>
-        <div class="gift gift4">Gift</div>
+    <!-- CADEAUX QUI BOUGENT -->
+    <div class="gifts-container">
+        <div class="gift-box g1">Gift</div>
+        <div class="gift-box g2">Gift</div>
+        <div class="gift-box g3">Gift</div>
+        <div class="gift-box g4">Gift</div>
+        <div class="gift-box g5">Gift</div>
+        <div class="gift-box g6">Gift</div>
+        <div class="gift-box g7">Gift</div>
+        <div class="gift-box g8">Gift</div>
     </div>
 
-    <div class="main-card">
-        <h1 class="title">DEVOPS 6</h1>
-        <p class="subtitle">JOYEUX NOËL 2025</p>
-        <div class="message">
-            Ton pipeline est déployé,<br>
-            ton conteneur tourne à fond,<br>
-            et le Père Noël est fier de toi !
+    <!-- PÈRE NOËL EN TRAÎNEAU -->
+    <div class="santa-sleigh">
+        Santa ClausSanta ClausSanta ClausSanta Claus
+    </div>
+
+    <!-- CARTE CENTRALE DIAMANT -->
+    <div class="epic-card">
+        <div class="glow-border"></div>
+        <h1 class="epic-title">
+            <span>D</span><span>E</span><span>V</span><span>O</span><span>P</span><span>S</span>
+            <span> </span><span>6</span>
+        </h1>
+        <p class="epic-subtitle">JOYEUX NOËL 2025</p>
+        <div class="epic-message">
+            Ton déploiement est plus beau que le sapin de Rockefeller.<br>
+            Ton conteneur tourne mieux que le traîneau du Père Noël.<br>
+            Tu es une légende vivante.
         </div>
-        <div class="badges">
-            <span>TERRAFORM</span>
-            <span>DOCKER</span>
-            <span>NGINX</span>
-            <span>NOËL 2025</span>
-            <span>MAGIQUE</span>
+        <div class="epic-badges">
+            <span>TERRAFORM</span><span>DOCKER</span><span>NGINX</span><span>KUBERNETES</span><span>GITHUB ACTIONS</span><span>JENKINS</span><span>ANSIBLE</span><span>PROMETHEUS</span><span>GRAFANA</span><span>NOËL 2025</span><span>LÉGENDE</span>
         </div>
-        <p class="footer">Fait avec 1000 cafés, 0 sommeil et tout l’amour du monde • Décembre 2025</p>
+        <p class="epic-footer">
+            Créé avec 0 sommeil • 47 cafés • 12 Red Bulls • 1 seul cœur qui bat pour DevOps<br>
+            © 2025 — La meilleure promo du monde
+        </p>
     </div>
 
-    <div class="santa">Santa Claus</div>
+    <!-- RENNE QUI COURT -->
+    <div class="reindeer">ReindeerReindeerReindeer</div>
 
-    <!-- Musique de Noël (douce et discrète) -->
-    <audio autoplay loop volume="0.3">
-        <source src="https://assets.mixkit.co/sfx/preview/mixkit-christmas-bells-120.mp3" type="audio/mpeg">
+    <!-- MUSIQUE DE NOËL ÉPIQUE -->
+    <audio autoplay loop>
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-jingle-bells-122.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Confettis quand tu cliques -->
+    <!-- CONFETTIS + NEIGE JS -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="snow.js"></script>
+
+    <!-- CLIC = EXPLOSION DE MAGIE -->
     <script>
-        document.body.onclick = () => confetti({
-            particleCount: 300,
-            spread: 120,
-            origin: { y: 0.6 }
-        });
+        document.body.onclick = () => {
+            confetti({ particleCount: 500, spread: 180, origin: { y: 0.5 } });
+            confetti({ particleCount: 300, angle: 60, spread: 90, origin: { x: 0 } });
+            confetti({ particleCount: 300, angle: 120, spread: 90, origin: { x: 1 } });
+        };
     </script>
 
 </body>
