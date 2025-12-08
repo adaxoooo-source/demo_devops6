@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr"><head>
 <meta charset="UTF-8">
-<title>禅 DevOps 6</title>
+<title>NIGHT CITY | DEVOPS 6</title>
 <style>
-  body{margin:0;background:#f5f0e6;height:100vh;display:grid;place-items:center;font-family:'Noto Serif JP',serif;color:#333;overflow:hidden;}
-  .zen{background:#fffdf9;padding:100px 80px;border-radius:20px;box-shadow:0 30px 100px rgba(0,0,0,0.1);text-align:center;position:relative;}
-  .circle{position:absolute;width:300px;height:300px;border:8px solid #ddd;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.3;}
-  h1{font-size:6rem;margin:0;letter-spacing:20px;font-weight:300;}
-  p{font-size:1.8rem;margin-top:40px;opacity:0.8;}
-  .raked{background:repeating-linear-gradient(45deg,#eee,#eee 10px,#ddd 10px,#ddd 20px);height:100px;width:100%;position:absolute;bottom:0;left:0;opacity:0.2;}
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+  body{margin:0;background:#0b0e17;color:#ff005c;font-family:'Roboto Mono',monospace;height:100vh;display:grid;place-items:center;overflow:hidden;position:relative;}
+  .scanline{position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(255,0,92,0.03) 50%);background-size:100% 4px;animation:scan 8s linear infinite;pointer-events:none;}
+  @keyframes scan{0%{transform:translateY(-100%)}100%{transform:translateY(100%)}}
+  .glitch{font-size:7rem;animation:glitch2 3s infinite;text-shadow:0 0 20px #ff005c;}
+  .subtitle{font-size:2.5rem;letter-spacing:12px;color:#00ffea;text-shadow:0 0 30px #00ffea;}
+  .hud{position:absolute;top:20px;left:20px;font-size:1.2rem;color:#00ff41;}
+  .hud2{position:absolute;bottom:20px;right:20px;}
+  @keyframes glitch2{0%,100%{clip-path:polygon(0 0,100% 0,100% 20%,0 20%)}5%{clip-path:polygon(0 30%,100% 30%,100% 50%,0 50%)}10%{clip-path:polygon(0 80%,100% 80%,100% 100%,0 100%)}}
 </style>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300&display=swap" rel="stylesheet">
 </head><body>
-<div class="zen">
-  <div class="circle"></div>
-  <h1>六</h1>
-  <p>DevOps en harmonie parfaite</p>
-  <div class="raked"></div>
+<div class="scanline"></div>
+<div class="hud">SYSTEM ONLINE // PORT 8080 // TERRAFORM v1.8</div>
+<div class="hud2">ARASAKA FIREWALL BYPASSED</div>
+<div style="text-align:center;z-index:2;">
+  <h1 class="glitch">DEVOPS 6</h1>
+  <p class="subtitle">NIGHT CITY DEPLOYMENT</p>
+  <p style="margin-top:50px;font-size:2rem;color:#ff00c8;animation:pulse 2s infinite;">STATUS: FULLY OPERATIONAL</p>
 </div>
 </body></html>
