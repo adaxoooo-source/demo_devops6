@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr"><head>
 <meta charset="UTF-8">
-<title>Holo DevOps</title>
+<title>禅 DevOps 6</title>
 <style>
-  body{margin:0;background:#000;height:100vh;display:grid;place-items:center;}
-  .holo{
-    background:linear-gradient(45deg,#667eea,#764ba2,#f093fb,#f5576c);
-    background-size:400%;
-    padding:80px 60px;
-    border-radius:30px;
-    color:#fff;
-    text-align:center;
-    animation:holo 8s ease infinite;
-    box-shadow:0 0 80px rgba(102,126,234,0.8);
-    position:relative;
-    overflow:hidden;
-  }
-  .holo::before{content:'';position:absolute;inset:0;background:inherit;filter:blur(40px);z-index:-1;}
-  @keyframes holo{background-position:0% 50%,100% 50%}
-  h1{font-size:6rem;margin:0;letter-spacing:10px;text-shadow:0 0 30px #fff;}
+  body{margin:0;background:#f5f0e6;height:100vh;display:grid;place-items:center;font-family:'Noto Serif JP',serif;color:#333;overflow:hidden;}
+  .zen{background:#fffdf9;padding:100px 80px;border-radius:20px;box-shadow:0 30px 100px rgba(0,0,0,0.1);text-align:center;position:relative;}
+  .circle{position:absolute;width:300px;height:300px;border:8px solid #ddd;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.3;}
+  h1{font-size:6rem;margin:0;letter-spacing:20px;font-weight:300;}
+  p{font-size:1.8rem;margin-top:40px;opacity:0.8;}
+  .raked{background:repeating-linear-gradient(45deg,#eee,#eee 10px,#ddd 10px,#ddd 20px);height:100px;width:100%;position:absolute;bottom:0;left:0;opacity:0.2;}
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300&display=swap" rel="stylesheet">
 </head><body>
-<div class="holo">
-  <h1>DEVOPS 6</h1>
-  <p style="font-size:2.5rem;margin-top:30px;">HOLOGRAPHIC DEPLOYMENT</p>
+<div class="zen">
+  <div class="circle"></div>
+  <h1>六</h1>
+  <p>DevOps en harmonie parfaite</p>
+  <div class="raked"></div>
 </div>
 </body></html>
