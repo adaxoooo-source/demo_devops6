@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr"><head>
 <meta charset="UTF-8">
-<title>DevOps Kawaii ♡</title>
+<title>DevOps Inferno</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
-  body{margin:0;background:linear-gradient(45deg,#ff9a9e,#fad0c4,#a1c4fd,#c2e9fb);font-family:'Comic Neue',cursive;color:#5d3a8a;height:100vh;display:grid;place-items:center;animation:bg 10s infinite alternate;}
-  @keyframes bg{0%{background-position:0% 50%}100%{background-position:100% 50%}}
-  .kawaii{background:#fff;padding:70px 50px;border-radius:50px;box-shadow:0 30px 80px rgba(0,0,0,0.2);text-align:center;position:relative;overflow:hidden;}
-  .kawaii::before{content:"♡";font-size:15rem;position:absolute;top:-60px;right:-60px;opacity:0.1;}
-  h1{font-size:5.5rem;margin:0;background:-webkit-linear-gradient(#ff6ec4,#7873f5);-webkit-background-clip:text;color:transparent;}
-  .sparkle{position:absolute;font-size:3rem;animation:twinkle 2s infinite;}
-  @keyframes twinkle{0%,100%{opacity:0.3}50%{opacity:1;transform:scale(1.5)}}
+  body{margin:0;background:#000;color:#ff3300;font-family:Impact,sans-serif;height:100vh;display:grid;place-items:center;overflow:hidden;}
+  .lava{position:absolute;inset:0;background:linear-gradient(0deg,#000,#8B0000,#FF4500,#000);animation:lava 8s infinite;}
+  @keyframes lava{0%{background-position:0 0}100%{background-position:0 100%}}
+  .card{background:rgba(0,0,0,0.7);padding:80px;border:4px solid #ff3300;border-radius:20px;text-align:center;box-shadow:0 0 60px #ff3300;}
+  h1{font-size:7rem;margin:0;animation:flame 2s infinite;text-shadow:0 0 30px #ff6600;}
+  @keyframes flame{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 </style>
 </head><body>
-<div class="kawaii">
-  <div class="sparkle" style="top:20px;left:30px;">✨</div>
-  <div class="sparkle" style="bottom:40px;right:50px;">♥</div>
-  <h1>DevOps 6</h1>
-  <p style="font-size:2.5rem;margin:30px 0;">Super kawaii deployment !</p>
-  <p style="font-size:4rem;">Deployed with love ♡</p>
+<div class="lava"></div>
+<div class="card">
+  <h1>DEVOPS 6</h1>
+  <p style="font-size:3rem;margin-top:20px;letter-spacing:8px;">BURNED IN SUCCESSFULLY</p>
 </div>
 </body></html>
