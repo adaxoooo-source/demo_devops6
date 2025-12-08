@@ -3,201 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps Glamour Edition</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>DevOps ⋅ Haute Couture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --pink: #ff006e;
-            --purple: #8338ec;
-            --cyan: #06ffa5;
-            --dark: #0d0b1e;
-            --glass: rgba(255, 255, 255, 0.05);
+            --gold: #ffd700;
+            --rose-gold: #b76e79;
+            --deep-black: #0a0a0a;
+            --glass: rgba(20, 20, 20, 0.6);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Orbitron', sans-serif;
-            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
+            font-family: 'Montserrat', sans-serif;
+            background: var(--deep-black);
             color: white;
             min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+            position: relative;
         }
 
-        /* Fond animé avec particules */
-        #particles {
+        /* Fond avec reflets dorés animés */
+        body::before {
+            content: '';
             position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0; left: 0;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: repeating-conic-gradient(from 0deg at 50% 50%, 
+                transparent 0deg, 
+                rgba(255,215,0,0.03) 5deg, 
+                transparent 10deg);
+            animation: rotate 30s linear infinite;
             pointer-events: none;
             z-index: 1;
         }
 
-        .container {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border-radius: 30px;
-            padding: 70px 50px;
-            max-width: 900px;
-            width: 90%;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 
-                0 0 60px rgba(131, 56, 236, 0.4),
-                inset 0 0 40px rgba(255, 255, 255, 0.05);
-            animation: float 6s ease-in-out infinite;
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+        .card {
+            position: relative;
+            z-index: 10;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 24px;
+            padding: 80px 60px;
+            max-width: 880px;
+            text-align: center;
+            box-shadow: 
+                0 0 80px rgba(255, 215, 0, 0.15),
+                inset 0 0 60px rgba(255, 255, 255, 0.05);
+            animation: levitate 8s ease-in-out infinite;
+        }
+
+        @keyframes levitate {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(0.5deg); }
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, var(--gold), var(--rose-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: 900;
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+            animation: pulseGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 40px rgba(255,215,0,0.6); }
+            50% { box-shadow: 0 0 80px rgba(255,215,0,0.9), 0 0 120px rgba(183,110,121,0.4); }
         }
 
         h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 5.5rem;
-            background: linear-gradient(90deg, #ff006e, #8338ec, #06ffa5, #ffbe0b);
+            font-family: 'Cinzel', serif;
+            font-size: 5rem;
+            letter-spacing: 8px;
+            margin-bottom: 16px;
+            background: linear-gradient(90deg, var(--gold), #fff, var(--rose-gold));
+            ;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            background-size: 300% 300%;
-            animation: gradient 8s ease infinite, glow 2s ease-in-out infinite alternate;
-            margin-bottom: 20px;
-            letter-spacing: 3px;
+            text-transform: uppercase;
         }
 
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes glow {
-            from { text-shadow: 0 0 20px rgba(255,0,110,0.8); }
-            to { text-shadow: 0 0 40px rgba(6,255,165,0.8), 0 0 60px rgba(131,56,236,0.6); }
-        }
-
-        .subtitle {
-            font-size: 1.8rem;
-            margin: 20px 0 40px;
+        .tagline {
+            font-size: 1.6rem;
+            font-weight: 300;
+            letter-spacing: 6px;
+            margin: 20px 0 50px;
             opacity: 0.9;
-            letter-spacing: 2px;
+            color: #ddd;
         }
 
-        .badges {
+        .tech {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
             justify-content: center;
-            margin: 40px 0;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 50px 0;
         }
 
-        .badge {
-            background: linear-gradient(45deg, rgba(255,0,110,0.2), rgba(131,56,236,0.2));
-            padding: 14px 32px;
+        .tech span {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            padding: 12px 28px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid var(--gold);
             border-radius: 50px;
-            border: 1px solid rgba(255,255,255,0.2);
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            backdrop-filter: blur(10px);
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            letter-spacing: 3px;
+            transition: all 0.5s ease;
         }
 
-        .badge:hover {
-            transform: translateY(-10px) scale(1.1);
-            box-shadow: 0 20px 40px rgba(255,0,110,0.4);
-            border-color: var(--cyan);
+        .tech span:hover {
+            background: var(--gold);
+            color: var(--deep-black);
+            transform: scale(1.15);
+            box-shadow: 0 0 30px rgba(255,215,0,0.6);
         }
 
         .status {
             margin-top: 50px;
-            padding: 25px;
-            background: linear-gradient(135deg, rgba(6,255,165,0.2), rgba(34,197,94,0.3));
-            border-radius: 20px;
-            border: 2px solid var(--cyan);
-            font-size: 1.6rem;
-            font-weight: 700;
-            animation: pulse 3s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 20px rgba(6,255,165,0.5); }
-            50% { box-shadow: 0 0 40px rgba(6,255,165,0.9); }
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--gold);
+            text-shadow: 0 0 20px var(--gold);
         }
 
         footer {
-            margin-top: 60px;
-            font-size: 1.1rem;
-            opacity: 0.8;
-            letter-spacing: 1px;
+            margin-top: 70px;
+            font-size: 1rem;
+            letter-spacing: 3px;
+            opacity: 0.7;
+            font-weight: 300;
         }
 
-        .neon {
-            color: var(--cyan);
-            text-shadow: 0 0 10px var(--cyan);
+        .shine {
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(30deg);
+            animation: shine 6s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <div id="particles"></div>
+    <div class="card">
+        <div class="shine"></div>
+        
+        <div class="logo">D6</div>
+        
+        <h1>DevOps 6</h1>
+        <p class="tagline">Haute Couture Edition</p>
 
-    <div class="container">
-        <h1>Pipeline Glamour</h1>
-        <p class="subtitle">Déploiement réussi avec style & élégance</p>
-
-        <div class="badges">
-            <div class="badge">TERRAFORM</div>
-            <div class="badge">DOCKER</div>
-            <div class="badge">NGINX</div>
-            <div class="badge">DEVOPS 2025</div>
-            <div class="badge">GLAM EDITION</div>
+        <div class="tech">
+            <span>TERRAFORM</span>
+            <span>DOCKER</span>
+            <span>NGINX</span>
+            <span>WINDOWS</span>
+            <span>2025</span>
         </div>
 
-        <div class="status">
-            Status : <span class="neon">ONLINE & FABULOUS</span>
-        </div>
+        <div class="status">DÉPLOIEMENT PARFAIT</div>
 
         <footer>
-            Créé avec amour, café & un peu de magie DevOps magique — 2025
+            Fait avec excellence et une touche d'or rose — Promo 2025
         </footer>
     </div>
 
-    <!-- Particules animées (sans bibliothèque lourde) -->
-    <script>
-        const particles = document.getElementById('particles');
-        for(let i = 0; i < 80; i++) {
-            const p = document.createElement('div');
-            p.style.position = 'absolute';
-            p.style.width = p.style.height = Math.random() * 5 + 'px';
-            p.style.background = ['#ff006e', '#8338ec', '#06ffa5'][Math.floor(Math.random()*3)];
-            p.style.borderRadius = '50%';
-            p.style.left = Math.random() * 100 + 'vw';
-            p.style.top = Math.random() * 100 + 'vh';
-            p.style.opacity = Math.random() * 0.6 + 0.2;
-            p.style.animation = `float ${Math.random()*10+10}s linear infinite`;
-            p.style.animationDelay = Math.random()*10 + 's';
-            particles.appendChild(p);
-        }
-
-        const style = document.createElement('style');
-        style.innerHTML = `
-            @keyframes float {
-                from { transform: translateY(100vh) scale(0); }
-                to { transform: translateY(-100px) scale(1); }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
 </body>
 </html>
