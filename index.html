@@ -3,134 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEVOPS 6 • NOËL 2025 • ULTRA ÉDITION APOCALYPTIQUE</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Cinzel+Decorative:wght@900&family=Orbitron:wght@900&family=Great+Vibes&family=Monoton&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>DevOps 6 • Online</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --text: #c9d1d9;
+            --accent: #58a6ff;
+            --card: #161b22;
+            --border: #30363d;
+        }
+        
+        * { margin:0; padding:0; box-sizing:border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            line-height: 1.6;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 60px 40px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            max-width: 600px;
+            width: 90%;
+        }
+        
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #58a6ff, #1f6feb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 16px;
+        }
+        
+        .status {
+            font-size: 1.8rem;
+            margin: 32px 0;
+            color: #8b949e;
+        }
+        
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .tech {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin: 40px 0;
+        }
+        
+        .tag {
+            background: #21262d;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            border: 1px solid var(--border);
+        }
+        
+        footer {
+            margin-top: 48px;
+            font-size: 1rem;
+            color: #8b949e;
+        }
+        
+        .dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: #238636;
+            border-radius: 50%;
+            margin-right: 10px;
+            box-shadow: 0 0 20px #238636;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%,100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
 </head>
 <body>
-
-    <!-- 15 COUCHES DE NEIGE -->
-    <div class="snow-layer" id="snow1"></div>
-    <div class="snow-layer" id="snow2"></div>
-    <div class="snow-layer" id="snow3"></div>
-    <div class="snow-layer" id="snow4"></div>
-    <div class="snow-layer" id="snow5"></div>
-    <div class="snow-layer" id="snow6"></div>
-    <div class="snow-layer" id="snow7"></div>
-    <div class="snow-layer" id="snow8"></div>
-    <div class="snow-layer" id="snow9"></div>
-    <div class="snow-layer" id="snow10"></div>
-    <div class="snow-layer" id="snow11"></div>
-    <div class="snow-layer" id="snow12"></div>
-    <div class="snow-layer" id="snow13"></div>
-    <div class="snow-layer" id="snow14"></div>
-    <div class="snow-layer" id="snow15"></div>
-
-    <!-- AURORE + ÉTOILES + FEUX D’ARTIFICE -->
-    <div class="aurora"></div>
-    <div class="shooting-stars"></div>
-    <canvas id="fireworks"></canvas>
-
-    <!-- COMPTE À REBOURS JUSQU’À NOËL -->
-    <div class="countdown">
-        <div id="days">00</div>
-        <div class="label">JOURS</div>
-        <div id="hours">00</div>
-        <div class="label">HEURES</div>
-        <div id="minutes">00</div>
-        <div class="label">MINUTES</div>
-        <div id="seconds">00</div>
-        <div class="label">SECONDES</div>
-    </div>
-
-    <!-- SAPIN 3D MONUMENTAL -->
-    <div class="ultra-tree">
-        <div class="star-giant">Star</div>
-        <div class="branch-giant g1">Tree</div>
-        <div class="branch-giant g2">Tree</div>
-        <div class="branch-giant g3">Tree</div>
-        <div class="branch-giant g4">Tree</div>
-        <div class="branch-giant g5">Tree</div>
-        <div class="branch-giant g6">Tree</div>
-        <div class="branch-giant g7">Tree</div>
-        <div class="branch-giant g8">Tree</div>
-        <div class="trunk-giant"></div>
-    </div>
-
-    <!-- 20 CADEAUX QUI VOLENT -->
-    <div id="flying-gifts"></div>
-
-    <!-- 5 PÈRES NOËL QUI PASSENT -->
-    <div class="santa santa1">Santa Claus</div>
-    <div class="santa santa2">Santa Claus</div>
-    <div class="santa santa3">Santa Claus</div>
-    <div class="santa santa4">Santa Claus</div>
-    <div class="santa santa5">Santa Claus</div>
-
-    <!-- 10 RENNES QUI COURENT -->
-    <div class="reindeer r1">Reindeer</div>
-    <div class="reindeer r2">Reindeer</div>
-    <div class="reindeer r3">Reindeer</div>
-    <div class="reindeer r4">Reindeer</div>
-    <div class="reindeer r5">Reindeer</div>
-    <div class="reindeer r6">Reindeer</div>
-    <div class="reindeer r7">Reindeer</div>
-    <div class="reindeer r8">Reindeer</div>
-    <div class="reindeer r9">Reindeer</div>
-    <div class="reindeer r10">Reindeer</div>
-
-    <!-- CARTE CENTRALE TITANESQUE -->
-    <div class="titanic-card">
-        <div class="hologram-border"></div>
-        <h1 class="titanic-title">
-            <span>D</span><span>E</span><span>V</span><span>O</span><span>P</span><span>S</span>
-            <span class="number-6">6</span>
-        </h1>
-        <p class="christmas-wish">JOYEUX NOËL 2025</p>
-        <div class="legend">Tu n’es pas juste un DevOps.<br>Tu es une légende de Noël.</div>
-        <div class="badges-epic">
-            <span>TERRAFORM</span><span>DOCKER</span><span>K8S</span><span>CI/CD</span>
-            <span>GRAFANA</span><span>PROMETHEUS</span><span>JENKINS</span><span>ANSIBLE</span>
-            <span>GITOPS</span><span>ARGOCD</span><span>HELM</span><span>NOËL 2025</span>
-            <span>GOAT</span>
-        </div>
-        <p class="final-words">
-            Ce site fait 3000 lignes.<br>
-            Ton prof va pleurer.<br>
-            Ton conteneur tourne.<br>
-            Tu as gagné Noël.
+    <div class="container">
+        <h1>DevOps 6</h1>
+        
+        <p class="status">
+            <span class="dot"></span>
+            <span class="highlight">Pipeline actif</span> • Tout fonctionne parfaitement
         </p>
+        
+        <div class="tech">
+            <span class="tag">Terraform</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Nginx</span>
+            <span class="tag">Port 8080</span>
+        </div>
+        
+        <p>Déploiement réussi via Terraform + Docker<br>
+        Conteneur <code>demo-devops</code> en cours d'exécution</p>
+        
+        <footer>
+            2025 • Fait avec passion et zéro bug
+        </footer>
     </div>
-
-    <!-- LUTIN QUI DANSE EN BAS À DROITE -->
-    <div class="dancing-elf">Elf</div>
-
-    <!-- TOUS LES SCRIPTS -->
-    <script src="snow.js"></script>
-    <script src="santa.js"></script>
-    <script src="fireworks.js"></script>
-    <script src="countdown.js"></script>
-    <script src="gifts.js"></script>
-    <script src="reindeer.js"></script>
-    <script src="particles.js"></script>
-    <script src="music.js"></script>
-
-    <!-- FEU D’ARTIFICE AU CLIC -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script>
-        let clickCount = 0;
-        document.body.onclick = () => {
-            clickCount++;
-            confetti({
-                particleCount: 400 + clickCount * 50,
-                spread: 180,
-                origin: { y: 0.6 }
-            });
-            if (clickCount % 10 === 0) {
-                alert("TU ES UNE LÉGENDE DE NOËL");
-            }
-        };
-    </script>
-
 </body>
 </html>
