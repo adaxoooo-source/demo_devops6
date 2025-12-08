@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr"><head>
 <meta charset="UTF-8">
-<title>DevOps Luxe</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DevOps Ocean</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat&display=swap');
-  body{margin:0;background:#111;height:100vh;display:grid;place-items:center;color:#ffd700;font-family:'Montserrat',sans-serif;}
-  .card{background:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1920') center/cover;padding:100px 60px;border-radius:30px;text-align:center;box-shadow:0 30px 100px rgba(0,0,0,0.7);}
-  h1{font-family:'Playfair Display',serif;font-size:6rem;margin:0;letter-spacing:8px;text-shadow:0 5px 20px rgba(0,0,0,0.8);}
-  p{font-size:1.6rem;margin-top:30px;opacity:0.9;}
+  body{margin:0;background:#001d3d;height:100vh;display:grid;place-items:center;color:#fff;font-family:system-ui;overflow:hidden;}
+  .bubble{position:absolute;border-radius:50%;background:rgba(255,255,255,0.1);animation:bubble linear infinite;}
+  @keyframes bubble{0%{transform:translateY(100vh) scale(0)}100%{transform:translateY(-100px) scale(1)}}
+  .card{background:rgba(0,50,100,0.4);backdrop-filter:blur(20px);padding:80px 60px;border-radius:30px;border:1px solid rgba(255,255,255,0.2);text-align:center;max-width:700px;}
+  h1{font-size:5rem;margin:0;background:linear-gradient(180deg,#00f5ff,#7fffd4);-webkit-background-clip:text;color:transparent;}
+  p{font-size:1.6rem;margin-top:20px;}
 </style>
 </head><body>
 <div class="card">
-  <h1>DEVOPS 6</h1>
-  <p>Luxury Deployment Edition • 2025</p>
+  <h1>DevOps 6</h1>
+  <p>Deep dive successful – Pipeline immergé avec succès</p>
 </div>
+<script>
+  setInterval(()=>{let b=document.createElement('div');b.classList.add('bubble');b.style.width=b.style.height=Math.random()*80+20+'px';b.style.left=Math.random()*100+'vw';b.style.animationDuration=Math.random()*8+8+'s';document.body.appendChild(b);setTimeout(()=>b.remove(),20000)},400);
+</script>
 </body></html>
