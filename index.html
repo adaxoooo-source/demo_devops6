@@ -1,29 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr"><head>
 <meta charset="UTF-8">
-<title>Matrix DevOps</title>
+<title>V A P O R DevOps</title>
 <style>
-  body{margin:0;background:#000;color:#0f0;font-family:'Courier New';overflow:hidden;height:100vh;}
-  canvas{position:absolute;top:0;left:0;}
-  .center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:4rem;text-shadow:0 0 20px #0f0;z-index:2;}
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  body{margin:0;background:#ff6bd6;height:100vh;display:grid;place-items:center;color:#01ffea;font-family:'Press Start 2P';text-shadow:0 0 20px;}
+  h1{font-size:4rem;animation:pixel 2s infinite;}
+  .grid{background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%22 height=%22100%22 fill=%22%23ff6bd6%22/><rect x=%220%22 y=%220%22 width=%2250%22 height=%2250%22 fill=%22%2300f5ff%22 opacity=%220.2%22/></svg>');position:absolute;inset:0;opacity:0.4;}
+  @keyframes pixel{0%,100%{transform:translate(0,0)}50%{transform:translate(10px,-10px)}}
 </style>
 </head><body>
-<div class="center">DEVOPS 6<br><small>WELCOME TO THE REAL</small></div>
-<canvas id="c"></canvas>
-<script>
-const c=document.getElementById('c'),ctx=c.getContext('2d'),w=c.width=window.innerWidth,h=c.height=window.innerHeight;
-let chars='01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホ'.split(''),fontSize=16,cols=w/fontSize,drops=[];
-for(let i=0;i<cols;i++)drops[i]=1;
-function draw(){
-  ctx.fillStyle='rgba(0,0,0,0.05)';ctx.fillRect(0,0,w,h);
-  ctx.fillStyle='#0f0';ctx.font=fontSize+'px monospace';
-  for(let i=0;i<drops.length;i++){
-    let text=chars[Math.floor(Math.random()*chars.length)];
-    ctx.fillText(text,i*fontSize,drops[i]*fontSize);
-    if(drops[i]*fontSize>h&&Math.random()>0.975)drops[i]=0;
-    drops[i]++;
-  }
-}
-setInterval(draw,33);
-</script>
+<div class="grid"></div>
+<h1>ＤＥＶＯＰＳ ６<br>ＶＡＰＯＲ ＥＤＩＴＩＯＮ</h1>
 </body></html>
