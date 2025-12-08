@@ -1,199 +1,23 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps ⋅ Haute Couture</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --gold: #ffd700;
-            --rose-gold: #b76e79;
-            --deep-black: #0a0a0a;
-            --glass: rgba(20, 20, 20, 0.6);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: var(--deep-black);
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* Fond avec reflets dorés animés */
-        body::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: repeating-conic-gradient(from 0deg at 50% 50%, 
-                transparent 0deg, 
-                rgba(255,215,0,0.03) 5deg, 
-                transparent 10deg);
-            animation: rotate 30s linear infinite;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        @keyframes rotate {
-            100% { transform: rotate(360deg); }
-        }
-
-        .card {
-            position: relative;
-            z-index: 10;
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            border-radius: 24px;
-            padding: 80px 60px;
-            max-width: 880px;
-            text-align: center;
-            box-shadow: 
-                0 0 80px rgba(255, 215, 0, 0.15),
-                inset 0 0 60px rgba(255, 255, 255, 0.05);
-            animation: levitate 8s ease-in-out infinite;
-        }
-
-        @keyframes levitate {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(0.5deg); }
-        }
-
-        .logo {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 30px;
-            background: linear-gradient(135deg, var(--gold), var(--rose-gold));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            font-weight: 900;
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
-            animation: pulseGlow 4s ease-in-out infinite;
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 40px rgba(255,215,0,0.6); }
-            50% { box-shadow: 0 0 80px rgba(255,215,0,0.9), 0 0 120px rgba(183,110,121,0.4); }
-        }
-
-        h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 5rem;
-            letter-spacing: 8px;
-            margin-bottom: 16px;
-            background: linear-gradient(90deg, var(--gold), #fff, var(--rose-gold));
-            ;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-transform: uppercase;
-        }
-
-        .tagline {
-            font-size: 1.6rem;
-            font-weight: 300;
-            letter-spacing: 6px;
-            margin: 20px 0 50px;
-            opacity: 0.9;
-            color: #ddd;
-        }
-
-        .tech {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin: 50px 0;
-        }
-
-        .tech span {
-            font-family: 'Cinzel', serif;
-            font-size: 1.4rem;
-            padding: 12px 28px;
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid var(--gold);
-            border-radius: 50px;
-            letter-spacing: 3px;
-            transition: all 0.5s ease;
-        }
-
-        .tech span:hover {
-            background: var(--gold);
-            color: var(--deep-black);
-            transform: scale(1.15);
-            box-shadow: 0 0 30px rgba(255,215,0,0.6);
-        }
-
-        .status {
-            margin-top: 50px;
-            font-size: 2rem;
-            font-weight: 600;
-            letter-spacing: 4px;
-            color: var(--gold);
-            text-shadow: 0 0 20px var(--gold);
-        }
-
-        footer {
-            margin-top: 70px;
-            font-size: 1rem;
-            letter-spacing: 3px;
-            opacity: 0.7;
-            font-weight: 300;
-        }
-
-        .shine {
-            position: absolute;
-            top: -100%;
-            left: -100%;
-            width: 50%;
-            height: 200%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: rotate(30deg);
-            animation: shine 6s infinite;
-            pointer-events: none;
-        }
-
-        @keyframes shine {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="card">
-        <div class="shine"></div>
-        
-        <div class="logo">D6</div>
-        
-        <h1>DevOps 6</h1>
-        <p class="tagline">Haute Couture Edition</p>
-
-        <div class="tech">
-            <span>TERRAFORM</span>
-            <span>DOCKER</span>
-            <span>NGINX</span>
-            <span>WINDOWS</span>
-            <span>2025</span>
-        </div>
-
-        <div class="status">DÉPLOIEMENT PARFAIT</div>
-
-        <footer>
-            Fait avec excellence et une touche d’or rose — Promo 2025
-        </footer>
-    </div>
-
-</body>
-</html>
+<html lang="fr"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DevOps Tokyo 六</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+  body{margin:0;background:#000;color:#0ff;font-family:'Orbitron',sans-serif;overflow:hidden;height:100vh;display:grid;align-items:center;justify-content:center;}
+  .glitch{background:#000;padding:40px;border:4px solid #0ff;box-shadow:0 0 40px #0ff;text-align:center;position:relative;}
+  .glitch:before,.glitch:after{content:'DEVOPS 6';font-size:6rem;animation:glitch 2s infinite;}
+  .glitch:before{color:#f0f;animation:glitch 2s infinite 0.5s;clip-path:polygon(0 0,100% 0,100% 45%,0 45%);}
+  .glitch:after{color:#0f0;animation:glitch 2s infinite 1s;clip-path:polygon(0 60%,100% 60%,100% 100%,0 100%);}
+  h1{font-size:6rem;margin:0;animation:pulse 3s infinite;}
+  p{font-size:2rem;margin-top:30px;letter-spacing:8px;}
+  @keyframes glitch{0%,100%{transform:translate(0)}20%{transform:translate(-5px,5px)}40%{transform:translate(5px,-5px)}60%{transform:translate(-5px,5px)}80%{transform:translate(5px,-5px)}}
+  @keyframes pulse{0%{text-shadow:0 0 20px #0ff}50%{text-shadow:0 0 60px #0ff}100%{text-shadow:0 0 20px #0ff}}
+</style>
+</head><body>
+<div class="glitch">
+  <h1>DEVOPS 6</h1>
+  <p>TOKYO NIGHT RUN</p>
+</div>
+</body></html>
