@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr"><head>
 <meta charset="UTF-8">
-<title>Aurora DevOps</title>
+<title>DevOps 95</title>
 <style>
-  body{margin:0;background:#0b132b2e;height:100vh;display:grid;place-items:center;color:#e0fbfc;font-family:'Segoe UI',sans-serif;overflow:hidden;}
-  .aurora{position:absolute;inset:0;background:linear-gradient(0deg,#0b132e 0%,#1a2a44 30%,#2a4b6d 60%,#0f3460 100%);overflow:hidden;}
-  .aurora::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(80,200,120,0.4),rgba(255,105,180,0.3),rgba(138,43,226,0.4));animation:aurora 15s infinite linear;filter:blur(60px);}
-  @keyframes aurora{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
-  .card{background:rgba(255,255,255,0.1);backdrop-filter:blur(20px);padding:90px 70px;border-radius:30px;border:1px solid rgba(255,255,255,0.2);text-align:center;}
-  h1{font-size:6rem;margin:0;text-shadow:0 0 40px #50c878;}
+  body{margin:0;background:teal;font-family:'MS Sans Serif',sans-serif;color:#000;height:100vh;display:grid;place-items:center;}
+  .window{background:#c0c0c0;border-top:2px solid #fff;border-left:2px solid #fff;border-right:2px solid #000;border-bottom:2px solid #000;padding:4px;box-shadow:4px 4px 0 #000;}
+  .titlebar{background:navy;color:#fff;padding:4px;font-weight:bold;text-align:left;position:relative;}
+  .titlebar::after{content:"X";position:absolute;right:8px;font-size:20px;cursor:pointer;}
+  .content{padding:40px;text-align:center;background:#fff;border:2px dotted #000;margin:4px;}
+  h1{font-size:4rem;margin:0;color:navy;}
 </style>
 </head><body>
-<div class="aurora"></div>
-<div class="card">
-  <h1>DevOps 6</h1>
-  <p style="font-size:2rem;margin-top:30px;">Northern Lights Deployment</p>
+<div class="window" style="width:600px">
+  <div class="titlebar">DevOps 6 - Microsoft Windows</div>
+  <div class="content">
+    <h1>It is now safe<br>to turn on your pipeline</h1>
+    <p style="margin-top:40px;font-size:2rem;">Deployment successful!</p>
+  style="margin-top:60px;">© 2025 DevOps Corporation</p>
+  </div>
 </div>
 </body></html>
