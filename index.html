@@ -1,3 +1,7 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><title>SUCCESS</title><style>
-  body{background:#000;color:#0f0;height:100vh;display:grid;place-items:center;font-size:15rem;font-weight:900;text-shadow:0 0 100px #0f0}
-</style></head><body>SUCCESS</body></html>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>2049</title><style>
+  body{margin:0;background:#000;color:#0ff;font-family:'Courier New';height:100vh;display:grid;place-items:center;position:relative;overflow:hidden}
+  .rain{animation:r 1s linear infinite}
+  @keyframes r{0%{background-position:0 0}100%{background-position:0 100%}}
+  .rain::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 2px,#0ff 2px,#0ff 4px);opacity:0.1;animation:r 2s linear infinite}
+  h1{font-size:12rem;text-shadow:0 0 60px #0ff}
+</style></head><body class="rain"><h1>DEVOPS 6</h1></body></html>
