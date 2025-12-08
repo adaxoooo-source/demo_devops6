@@ -2,122 +2,20 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps 6 • Online</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DevOps 6</title>
     <style>
-        :root {
-            --bg: #0d1117;
-            --text: #c9d1d9;
-            --accent: #58a6ff;
-            --card: #161b22;
-            --border: #30363d;
-        }
-        
-        * { margin:0; padding:0; box-sizing:border-box; }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            height: 100vh;
-            display: grid;
-            place-items: center;
-            line-height: 1.6;
-        }
-        
-        .container {
-            text-align: center;
-            padding: 60px 40px;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            max-width: 600px;
-            width: 90%;
-        }
-        
-        h1 {
-            font-size: 4.5rem;
-            font-weight: 800;
-            background: linear-gradient(90deg, #58a6ff, #1f6feb);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 16px;
-        }
-        
-        .status {
-            font-size: 1.8rem;
-            margin: 32px 0;
-            color: #8b949e;
-        }
-        
-        .highlight {
-            color: var(--accent);
-            font-weight: 600;
-        }
-        
-        .tech {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 16px;
-            margin: 40px 0;
-        }
-        
-        .tag {
-            background: #21262d;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-size: 1rem;
-            border: 1px solid var(--border);
-        }
-        
-        footer {
-            margin-top: 48px;
-            font-size: 1rem;
-            color: #8b949e;
-        }
-        
-        .dot {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            background: #238636;
-            border-radius: 50%;
-            margin-right: 10px;
-            box-shadow: 0 0 20px #238636;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%,100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
+        body,html{margin:0;height:100%;background:#000;color:#fff;font-family:system-ui,sans-serif;display:grid;place-items:center}
+        h1{font-size:clamp(3rem,10vw,10rem);font-weight:900;letter-spacing:-4px}
+        p{font-size:1.5rem;opacity:0.7}
+        .dot{width:16px;height:16px;background:#0f00;border-radius:50%;display:inline-block;animation:p 2s infinite}
+        @keyframes p{50%{opacity:0.3}}
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>DevOps 6</h1>
-        
-        <p class="status">
-            <span class="dot"></span>
-            <span class="highlight">Pipeline actif</span> • Tout fonctionne parfaitement
-        </p>
-        
-        <div class="tech">
-            <span class="tag">Terraform</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Nginx</span>
-            <span class="tag">Port 8080</span>
-        </div>
-        
-        <p>Déploiement réussi via Terraform + Docker<br>
-        Conteneur <code>demo-devops</code> en cours d'exécution</p>
-        
-        <footer>
-            2025 • Fait avec passion et zéro bug
-        </footer>
+    <div style="text-align:center">
+        <h1>DEVOPS 6</h1>
+        <p><span class="dot"></span> Online • Port 8080 • 2025</p>
     </div>
 </body>
 </html>
