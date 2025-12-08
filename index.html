@@ -3,272 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>★ DEVOPS 6 — ÉDITION DIAMANT ARC-EN-CIEL 2025 ★</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800;900&family=Playfair+Display:wght@700;900&family=Cinzel+Decorative:wght@900&family=Montserrat:wght@300;600;900&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --hue: 0;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            margin: 0;
-            height: 100vh;
-            overflow: hidden;
-            background: #000;
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            perspective: 1500px;
-            animation: hueShift 20s infinite linear;
-        }
-        
-        @keyframes hueShift {
-            0% { filter: hue-rotate(0deg); }
-            100% { filter: hue-rotate(360deg); }
-        }
-
-        /* === FOND ÉTOILÉ + PARTICULES ARC-EN-CIEL === */
-        #stars, #particles { position: fixed; inset: 0; pointer-events: none; }
-        
-        /* === GRILLE NÉON 3D === */
-        .grid {
-            position: fixed;
-            inset: 0;
-            background: 
-                linear-gradient(90deg, rgba(255,0,255,0.03) 1px, transparent 1px),
-                linear-gradient(rgba(0,255,255,0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            transform: rotateX(70deg) translateZ(-500px);
-            animation: gridMove 30s linear infinite;
-        }
-        @keyframes gridMove { 0% { transform: rotateX(70deg) translateZ(-500px) translateY(0); } 100% { transform: rotateX(70deg) translateZ(-500px) translateY(-1000px); } }
-
-        /* === CONTAINER PRINCIPAL DIAMANT === */
-        .master-container {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-        }
-        
-        .diamond-card {
-            background: linear-gradient(135deg, 
-                rgba(255,20,147,0.15), 
-                rgba(0,255,255,0.15), 
-                rgba(255,215,0,0.15), 
-                rgba(138,43,226,0.15));
-            backdrop-filter: blur(30px);
-            border-radius: 40px;
-            padding: 80px 100px;
-            text-align: center;
-            border: 2px solid transparent;
-            background-clip: padding-box;
-            box-shadow: 
-                0 0 100px rgba(255,20,147,0.6),
-                0 0 160px rgba(0,255,255,0.5),
-                inset 0 0 80px rgba(255,255,255,0.1);
-            animation: float 8s ease-in-out infinite, borderRainbow 6s linear infinite;
-            transform-style: preserve-3d;
-            max-width: 1000px;
-        }
-        
-        @keyframes float {
-            0%,100% { transform: translateY(0) rotateY(0); }
-            50% { transform: translateY(-40px) rotateY(10deg); }
-        }
-        
-        @keyframes borderRainbow {
-            0% { border-color: #ff00ff; }
-            25% { border-color: #00ffff; }
-            50% { border-color: #ffff00; }
-            75% { border-color: #ff00aa; }
-            100% { border-color: #00ffaa; }
-        }
-
-        /* === TITRE ÉNORME MULTICOLORE === */
-        h1 {
-            font-family: 'Cinzel Decorative', cursive;
-            font-size: 11vw;
-            font-weight: 900;
-            letter-spacing: 12px;
-            margin: 0;
-            background: linear-gradient(90deg, 
-                #ff006e, #8338ec, #3a86ff, #06ffa5, #ffbe0b, #ff006e);
-            background-size: 600% 600%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: rainbowText 8s ease infinite, glow 3s ease-in-out infinite alternate;
-            text-shadow: 0 0 80px rgba(255,255,255,0.8);
-        }
-        
-        @keyframes rainbowText {
-            0%,100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        
-        @keyframes glow {
-            from { text-shadow: 0 0 80px #fff, 0 0 120px #ff006e; }
-            to { text-shadow: 0 0 120px #fff, 0 0 180px #06ffa5; }
-        }
-
-        .subtitle {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5vw;
-            margin: 30px 0 50px;
-            letter-spacing: 8px;
-            background: linear-gradient(90deg, #fff, #e0e0e0);
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: subtitleGlow 5s infinite alternate;
-        }
-        
-        /* === BADGES LUXE ANIMÉS === */
-        .badges {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin: 60px 0;
-        }
-        
-        .badge {
-            padding: 20px 50px;
-            font-size: 2.2rem;
-            font-weight: 900;
-            border-radius: 60px;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border: 2px solid;
-            border-image: linear-gradient(45deg, #ff006e, #06ffa5) 1;
-            animation: badgePulse 4s infinite;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: all 0.5s;
-        }
-        
-        .badge:hover {
-            transform: scale(1.3) translateY(-20px);
-            box-shadow: 0 30px 80px rgba(255,0,110,0.8);
-        }
-        
-        /* === STATUS DIAMANT === */
-        .status {
-            margin-top: 80px;
-            padding: 40px 80px;
-            font-size: 3.8vw;
-            font-weight: 900;
-            letter-spacing: 10px;
-            background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00);
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: statusRainbow 10s linear infinite;
-            text-shadow: 0 0 60px currentColor;
-        }
-        
-        /* === PARTICULES ARC-EN-CIEL VOLANTES === */
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            pointer-events: none;
-            animation: fly linear infinite;
-        }
-        
-        @keyframes fly {
-            0% { transform: translate(0, 100vh) scale(0); opacity: 0; }
-            10% { opacity: 1; }
-            100% { transform: translate(var(--x), -100px) scale(1); opacity: 0; }
-        }
-        
-        footer {
-            margin-top: 100px;
-            font-size: 1.8vw;
-            letter-spacing: 6px;
-            opacity: 0.8;
-            animation: fadeIn 3s infinite alternate;
-        }
-    </style>
+    <title>DEVOPS 6 • JOYEUX NOËL 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Cinzel+Decorative:wght@900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="grid"></div>
-    <canvas id="stars"></canvas>
-    <div id="particles"></div>
+    <div class="snow"></div>
+    <div class="snow></div>
+    <div class="aurora"></div>
 
-    <div class="master-container">
-        <div class="diamond-card">
-            <h1>DEVOPS 6</h1>
-            <div class="subtitle">ÉDITION DIAMANT ARC-EN-CIEL 2025</div>
-            
-            <div class="badges">
-                <div class="badge">TERRAFORM</div>
-                <div class="badge">DOCKER</div>
-                <div class="badge">NGINX</div>
-                <div class="badge">LÉGENDAIRE</div>
-                <div class="badge">2025</div>
-            </div>
-            
-            <div class="status">DÉPLOIEMENT PARFAIT</div>
-            
-            <footer>Créé avec folie, passion & 12 cafés — Décembre 2025</footer>
-        </div>
+    <div class="christmas-tree">
+        <div class="star">Star</div>
+        <div class="level level1">Tree</div>
+        <div class="level level2">Tree</div>
+        <div class="level level3">Tree</div>
+        <div class="level level4">Tree</div>
+        <div class="level level5">Tree</div>
+        <div class="trunk"></div>
     </div>
 
-    <!-- STARS BACKGROUND -->
-    <script>
-        const canvas = document.getElementById('stars');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        
-        const stars = [];
-        for(let i = 0; i < 400; i++) {
-            stars.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                size: Math.random() * 3,
-                speed: Math.random() * 2 + 0.5
-            });
-        }
-        
-        function animateStars() {
-            ctx.clearRect(0,0,canvas.width,canvas.height);
-            stars.forEach(star => {
-                ctx.fillStyle = `hsl(${Date.now() * 0.05 % 360}, 100%, 70%)`;
-                ctx.fillRect(star.x, star.y, star.size, star.size);
-                star.y += star.speed;
-                if(star.y > canvas.height) star.y = 0;
-            });
-            requestAnimationFrame(animateStars);
-        }
-        animateStars();
-    </script>
+    <div class="gifts">
+        <div class="gift gift1">Gift</div>
+        <div class="gift gift2">Gift</div>
+        <div class="gift gift3">Gift</div>
+        <div class="gift gift4">Gift</div>
+    </div>
 
-    <!-- PARTICULES VOLANTES MULTICOLORE -->
-    <script>
-        setInterval(() => {
-            const p = document.createElement('div');
-            p.classList.add('particle');
-            p.style.width = p.style.height = Math.random() * 20 + 10 + 'px';
-            p.style.background = `hsl(${Math.random()*360},100%,50%)`;
-            p.style.left = Math.random() * 100 + 'vw';
-            p.style.setProperty('--x', (Math.random() - 0.5) * 200 + 'px');
-            p.style.animationDuration = Math.random() * 8 + 8 + 's';
-            p.style.boxShadow = '0 0 30px currentColor';
-            document.getElementById('particles').appendChild(p);
-            setTimeout(() => p.remove(), 16000);
-        }, 200);
-    </script>
+    <div class="main-card">
+        <h1 class="title">DEVOPS 6</h1>
+        <p class="subtitle">JOYEUX NOËL 2025</p>
+        <div class="message">
+            Ton pipeline est déployé,<br>
+            ton conteneur tourne à fond,<br>
+            et le Père Noël est fier de toi !
+        </div>
+        <div class="badges">
+            <span>TERRAFORM</span>
+            <span>DOCKER</span>
+            <span>NGINX</span>
+            <span>NOËL 2025</span>
+            <span>MAGIQUE</span>
+        </div>
+        <p class="footer">Fait avec 1000 cafés, 0 sommeil et tout l’amour du monde • Décembre 2025</p>
+    </div>
 
-    <!-- SON DISCRET DE VICTOIRE (optionnel, retire si tu veux silence) -->
-    <!-- <audio autoplay loop volume="0.1">
-        <source src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-level-up-275.mp3" type="audio/mpeg">
-    </audio> -->
+    <div class="santa">Santa Claus</div>
+
+    <!-- Musique de Noël (douce et discrète) -->
+    <audio autoplay loop volume="0.3">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-christmas-bells-120.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Confettis quand tu cliques -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        document.body.onclick = () => confetti({
+            particleCount: 300,
+            spread: 120,
+            origin: { y: 0.6 }
+        });
+    </script>
 
 </body>
 </html>
