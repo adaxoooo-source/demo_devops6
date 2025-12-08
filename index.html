@@ -2,24 +2,19 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>devops6:~ $</title>
+    <title>DevOps 6 — Excellence</title>
     <style>
-        body{margin:0;background:#000;color:#0f0;font-family:'Courier New';padding:40px;height:100vh}
-        pre{font-size:1.4rem;line-height:2}
-        .cursor{animation:b 1s infinite}
-        @keyframes b{50%{opacity:0}}
+        body{margin:0;background:#111 url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920') center/cover fixed;color:#ffd700;font-family:'Playfair Display',serif;height:100vh;display:grid;place-items:center;text-align:center}
+        .card{background:rgba(0,0,0,0.6);padding:100px;border-radius:30px;backdrop-filter:blur(10px)}
+        h1{font-size:8rem;margin:0;letter-spacing:10px}
+        p{font-size:2rem;margin-top:30px}
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-<pre>
-<span style="color:#0f0">devops6</span>@<span style="color:#0ff">localhost</span>:~$ terraform apply
-Apply complete! Resources: 1 added.
-
-<span style="color:#0f0">devops6</span>@<span style="color:#0ff">localhost</span>:~$ docker ps
-CONTAINER ID   IMAGE         PORTS                 NAMES
-a1b2c3d4e5f6   nginx:alpine  0.0.0.0:8080->80/tcp  demo-devops
-
-<span style="color:#fff;font-size:2rem">Pipeline actif — Tout est OK</span><span class="cursor">_</span>
-</pre>
+    <div class="card">
+        <h1>DEVOPS 6</h1>
+        <p>Excellence déployée</p>
+    </div>
 </body>
 </html>
