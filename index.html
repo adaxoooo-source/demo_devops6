@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr"><head>
 <meta charset="UTF-8">
-<title>DevOps 95</title>
+<title>Holo DevOps</title>
 <style>
-  body{margin:0;background:teal;font-family:'MS Sans Serif',sans-serif;color:#000;height:100vh;display:grid;place-items:center;}
-  .window{background:#c0c0c0;border-top:2px solid #fff;border-left:2px solid #fff;border-right:2px solid #000;border-bottom:2px solid #000;padding:4px;box-shadow:4px 4px 0 #000;}
-  .titlebar{background:navy;color:#fff;padding:4px;font-weight:bold;text-align:left;position:relative;}
-  .titlebar::after{content:"X";position:absolute;right:8px;font-size:20px;cursor:pointer;}
-  .content{padding:40px;text-align:center;background:#fff;border:2px dotted #000;margin:4px;}
-  h1{font-size:4rem;margin:0;color:navy;}
+  body{margin:0;background:#000;height:100vh;display:grid;place-items:center;}
+  .holo{
+    background:linear-gradient(45deg,#667eea,#764ba2,#f093fb,#f5576c);
+    background-size:400%;
+    padding:80px 60px;
+    border-radius:30px;
+    color:#fff;
+    text-align:center;
+    animation:holo 8s ease infinite;
+    box-shadow:0 0 80px rgba(102,126,234,0.8);
+    position:relative;
+    overflow:hidden;
+  }
+  .holo::before{content:'';position:absolute;inset:0;background:inherit;filter:blur(40px);z-index:-1;}
+  @keyframes holo{background-position:0% 50%,100% 50%}
+  h1{font-size:6rem;margin:0;letter-spacing:10px;text-shadow:0 0 30px #fff;}
 </style>
 </head><body>
-<div class="window" style="width:600px">
-  <div class="titlebar">DevOps 6 - Microsoft Windows</div>
-  <div class="content">
-    <h1>It is now safe<br>to turn on your pipeline</h1>
-    <p style="margin-top:40px;font-size:2rem;">Deployment successful!</p>
-  style="margin-top:60px;">© 2025 DevOps Corporation</p>
-  </div>
+<div class="holo">
+  <h1>DEVOPS 6</h1>
+  <p style="font-size:2.5rem;margin-top:30px;">HOLOGRAPHIC DEPLOYMENT</p>
 </div>
 </body></html>
