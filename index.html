@@ -3,98 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEVOPS 6 • NOËL 2025 • ÉDITION APOCALYPTIQUE</title>
+    <title>DEVOPS 6 • NOËL 2025 • ULTRA ÉDITION APOCALYPTIQUE</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Cinzel+Decorative:wght@900&family=Orbitron:wght@900&family=Dancing+Script:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Cinzel+Decorative:wght@900&family=Orbitron:wght@900&family=Great+Vibes&family=Monoton&family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- 10 COUCHES DE NEIGE + PARTICULES -->
+    <!-- 15 COUCHES DE NEIGE -->
     <div class="snow-layer" id="snow1"></div>
     <div class="snow-layer" id="snow2"></div>
     <div class="snow-layer" id="snow3"></div>
-    <div class="snow-layer" id="snow4></div>
+    <div class="snow-layer" id="snow4"></div>
     <div class="snow-layer" id="snow5"></div>
     <div class="snow-layer" id="snow6"></div>
     <div class="snow-layer" id="snow7"></div>
     <div class="snow-layer" id="snow8"></div>
     <div class="snow-layer" id="snow9"></div>
     <div class="snow-layer" id="snow10"></div>
+    <div class="snow-layer" id="snow11"></div>
+    <div class="snow-layer" id="snow12"></div>
+    <div class="snow-layer" id="snow13"></div>
+    <div class="snow-layer" id="snow14"></div>
+    <div class="snow-layer" id="snow15"></div>
 
-    <!-- AURORE + ÉTOILES FILANTES -->
+    <!-- AURORE + ÉTOILES + FEUX D’ARTIFICE -->
     <div class="aurora"></div>
     <div class="shooting-stars"></div>
+    <canvas id="fireworks"></canvas>
 
-    <!-- SAPIN GÉANT 3D -->
-    <div class="mega-tree">
-        <div class="star-top">Star</div>
-        <div class="branch b1">Tree</div>
-        <div class="branch b2">Tree</div>
-        <div class="branch b3">Tree</div>
-        <div class="branch b4">Tree</div>
-        <div class="branch b5">Tree</div>
-        <div class="branch b6">Tree</div>
-        <div class="branch b7">Tree</div>
-        <div class="trunk-big"></div>
+    <!-- COMPTE À REBOURS JUSQU’À NOËL -->
+    <div class="countdown">
+        <div id="days">00</div>
+        <div class="label">JOURS</div>
+        <div id="hours">00</div>
+        <div class="label">HEURES</div>
+        <div id="minutes">00</div>
+        <div class="label">MINUTES</div>
+        <div id="seconds">00</div>
+        <div class="label">SECONDES</div>
     </div>
 
-    <!-- CADEAUX QUI BOUGENT -->
-    <div class="gifts-container">
-        <div class="gift-box g1">Gift</div>
-        <div class="gift-box g2">Gift</div>
-        <div class="gift-box g3">Gift</div>
-        <div class="gift-box g4">Gift</div>
-        <div class="gift-box g5">Gift</div>
-        <div class="gift-box g6">Gift</div>
-        <div class="gift-box g7">Gift</div>
-        <div class="gift-box g8">Gift</div>
+    <!-- SAPIN 3D MONUMENTAL -->
+    <div class="ultra-tree">
+        <div class="star-giant">Star</div>
+        <div class="branch-giant g1">Tree</div>
+        <div class="branch-giant g2">Tree</div>
+        <div class="branch-giant g3">Tree</div>
+        <div class="branch-giant g4">Tree</div>
+        <div class="branch-giant g5">Tree</div>
+        <div class="branch-giant g6">Tree</div>
+        <div class="branch-giant g7">Tree</div>
+        <div class="branch-giant g8">Tree</div>
+        <div class="trunk-giant"></div>
     </div>
 
-    <!-- PÈRE NOËL EN TRAÎNEAU -->
-    <div class="santa-sleigh">
-        Santa ClausSanta ClausSanta ClausSanta Claus
-    </div>
+    <!-- 20 CADEAUX QUI VOLENT -->
+    <div id="flying-gifts"></div>
 
-    <!-- CARTE CENTRALE DIAMANT -->
-    <div class="epic-card">
-        <div class="glow-border"></div>
-        <h1 class="epic-title">
+    <!-- 5 PÈRES NOËL QUI PASSENT -->
+    <div class="santa santa1">Santa Claus</div>
+    <div class="santa santa2">Santa Claus</div>
+    <div class="santa santa3">Santa Claus</div>
+    <div class="santa santa4">Santa Claus</div>
+    <div class="santa santa5">Santa Claus</div>
+
+    <!-- 10 RENNES QUI COURENT -->
+    <div class="reindeer r1">Reindeer</div>
+    <div class="reindeer r2">Reindeer</div>
+    <div class="reindeer r3">Reindeer</div>
+    <div class="reindeer r4">Reindeer</div>
+    <div class="reindeer r5">Reindeer</div>
+    <div class="reindeer r6">Reindeer</div>
+    <div class="reindeer r7">Reindeer</div>
+    <div class="reindeer r8">Reindeer</div>
+    <div class="reindeer r9">Reindeer</div>
+    <div class="reindeer r10">Reindeer</div>
+
+    <!-- CARTE CENTRALE TITANESQUE -->
+    <div class="titanic-card">
+        <div class="hologram-border"></div>
+        <h1 class="titanic-title">
             <span>D</span><span>E</span><span>V</span><span>O</span><span>P</span><span>S</span>
-            <span> </span><span>6</span>
+            <span class="number-6">6</span>
         </h1>
-        <p class="epic-subtitle">JOYEUX NOËL 2025</p>
-        <div class="epic-message">
-            Ton déploiement est plus beau que le sapin de Rockefeller.<br>
-            Ton conteneur tourne mieux que le traîneau du Père Noël.<br>
-            Tu es une légende vivante.
+        <p class="christmas-wish">JOYEUX NOËL 2025</p>
+        <div class="legend">Tu n’es pas juste un DevOps.<br>Tu es une légende de Noël.</div>
+        <div class="badges-epic">
+            <span>TERRAFORM</span><span>DOCKER</span><span>K8S</span><span>CI/CD</span>
+            <span>GRAFANA</span><span>PROMETHEUS</span><span>JENKINS</span><span>ANSIBLE</span>
+            <span>GITOPS</span><span>ARGOCD</span><span>HELM</span><span>NOËL 2025</span>
+            <span>GOAT</span>
         </div>
-        <div class="epic-badges">
-            <span>TERRAFORM</span><span>DOCKER</span><span>NGINX</span><span>KUBERNETES</span><span>GITHUB ACTIONS</span><span>JENKINS</span><span>ANSIBLE</span><span>PROMETHEUS</span><span>GRAFANA</span><span>NOËL 2025</span><span>LÉGENDE</span>
-        </div>
-        <p class="epic-footer">
-            Créé avec 0 sommeil • 47 cafés • 12 Red Bulls • 1 seul cœur qui bat pour DevOps<br>
-            © 2025 — La meilleure promo du monde
+        <p class="final-words">
+            Ce site fait 3000 lignes.<br>
+            Ton prof va pleurer.<br>
+            Ton conteneur tourne.<br>
+            Tu as gagné Noël.
         </p>
     </div>
 
-    <!-- RENNE QUI COURT -->
-    <div class="reindeer">ReindeerReindeerReindeer</div>
+    <!-- LUTIN QUI DANSE EN BAS À DROITE -->
+    <div class="dancing-elf">Elf</div>
 
-    <!-- MUSIQUE DE NOËL ÉPIQUE -->
-    <audio autoplay loop>
-        <source src="https://assets.mixkit.co/sfx/preview/mixkit-jingle-bells-122.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- CONFETTIS + NEIGE JS -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- TOUS LES SCRIPTS -->
     <script src="snow.js"></script>
+    <script src="santa.js"></script>
+    <script src="fireworks.js"></script>
+    <script src="countdown.js"></script>
+    <script src="gifts.js"></script>
+    <script src="reindeer.js"></script>
+    <script src="particles.js"></script>
+    <script src="music.js"></script>
 
-    <!-- CLIC = EXPLOSION DE MAGIE -->
+    <!-- FEU D’ARTIFICE AU CLIC -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script>
+        let clickCount = 0;
         document.body.onclick = () => {
-            confetti({ particleCount: 500, spread: 180, origin: { y: 0.5 } });
-            confetti({ particleCount: 300, angle: 60, spread: 90, origin: { x: 0 } });
-            confetti({ particleCount: 300, angle: 120, spread: 90, origin: { x: 1 } });
+            clickCount++;
+            confetti({
+                particleCount: 400 + clickCount * 50,
+                spread: 180,
+                origin: { y: 0.6 }
+            });
+            if (clickCount % 10 === 0) {
+                alert("TU ES UNE LÉGENDE DE NOËL");
+            }
         };
     </script>
 
