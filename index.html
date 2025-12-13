@@ -2,41 +2,101 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>🌟 Demo DevOps CI/CD 🌟</title>
+<title>🌈 Demo DevOps CI/CD – WOW Edition 🌈</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
     body {
         margin: 0;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        text-align: center;
         background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
         color: #fff;
+        text-align: center;
         overflow-x: hidden;
     }
 
     header {
-        padding: 70px 20px;
-        background: linear-gradient(135deg, #ff512f, #dd2476);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        padding: 80px 20px;
+        background: linear-gradient(135deg, #ff416c, #ff4b2b);
         border-bottom-left-radius: 50% 20%;
         border-bottom-right-radius: 50% 20%;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         position: relative;
+        overflow: hidden;
     }
-    header h1 { font-size: 3em; margin-bottom: 10px; animation: slideIn 1s ease-out; text-shadow: 2px 2px 5px rgba(0,0,0,0.3);}
-    header p { font-size: 1.3em; animation: fadeIn 2s ease-in; opacity: 0.9; }
-    .badge { display: inline-block; margin-top: 20px; padding: 12px 35px; background: #00f260; color: #000; font-weight: bold; border-radius: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: pulse 2s infinite; }
 
-    .cards { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; padding: 50px 20px; }
+    header h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+        animation: slideIn 1s ease-out;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+    header p {
+        font-size: 1.3em;
+        opacity: 0.9;
+        animation: fadeIn 2s ease-in;
+    }
+    .badge {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 40px;
+        background: linear-gradient(45deg, #00f260, #0575e6);
+        color: #000;
+        font-weight: bold;
+        border-radius: 30px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        animation: pulseGlow 2s infinite;
+    }
+
+    .cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 50px 20px;
+        perspective: 1000px;
+    }
+
     .cards a {
         text-decoration: none;
         color: inherit;
     }
-    .card { flex: 1 1 200px; max-width: 250px; background: rgba(255,255,255,0.15); padding: 35px; border-radius: 25px; font-size: 1.2em; font-weight: bold; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: transform 0.3s, background 0.3s, box-shadow 0.3s; cursor: pointer; }
-    .card:hover { transform: translateY(-10px) scale(1.05); background: rgba(255,255,255,0.25); box-shadow: 0 15px 40px rgba(0,0,0,0.7); }
-    .git { background: #f44336; }
-    .ci { background: #4caf50; }
-    .docker { background: #00bcd4; }
-    .cd { background: #ff9800; }
+
+    .card {
+        flex: 1 1 200px;
+        max-width: 250px;
+        background: rgba(255,255,255,0.15);
+        padding: 40px;
+        border-radius: 25px;
+        font-size: 1.2em;
+        font-weight: bold;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        transition: transform 0.5s, background 0.5s, box-shadow 0.5s;
+        cursor: pointer;
+        transform-style: preserve-3d;
+        position: relative;
+    }
+
+    .card:hover {
+        transform: rotateY(15deg) rotateX(10deg) translateY(-10px);
+        background: rgba(255,255,255,0.35);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+    }
+
+    /* Icon floating animation inside card */
+    .card::before {
+        content: attr(data-icon);
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 3em;
+        animation: floatIcon 3s ease-in-out infinite;
+    }
+
+    .git { background: #f44336; --icon: "📁"; }
+    .ci { background: #4caf50; --icon: "⚙️"; }
+    .docker { background: #00bcd4; --icon: "🐳"; }
+    .cd { background: #ff9800; --icon: "🚀"; }
 
     footer {
         position: relative;
@@ -46,25 +106,19 @@
     }
     footer .rocket, footer .star {
         position: absolute;
-        width: 30px;
-        height: 30px;
         font-size: 30px;
         animation: float 4s infinite linear;
     }
     footer .rocket { color: #fff; bottom: -50px; left: 10%; }
     footer .star { color: yellow; top: 20px; }
 
-    @keyframes float {
-        0% { transform: translateY(0) rotate(0deg); }
-        50% { transform: translateY(-80px) rotate(180deg); }
-        100% { transform: translateY(0) rotate(360deg); }
-    }
+    @keyframes float { 0% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-80px) rotate(180deg); } 100% { transform: translateY(0) rotate(360deg); } }
+    @keyframes slideIn { from { transform: translateY(-50px); opacity:0; } to { transform: translateY(0); opacity:1; } }
+    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+    @keyframes pulseGlow { 0%,100% { box-shadow: 0 0 15px #00f260; } 50% { box-shadow: 0 0 35px #0575e6; } }
+    @keyframes floatIcon { 0% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-15px); } 100% { transform: translateX(-50%) translateY(0); } }
 
-    @keyframes slideIn { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
-
-    @media (max-width: 768px) { header h1 { font-size: 2.2em; } .cards { gap: 20px; padding: 30px 10px; } }
+    @media (max-width:768px) { header h1{ font-size:2.2em; } .cards { gap:20px; padding:30px 10px; } }
 </style>
 </head>
 <body>
@@ -76,10 +130,10 @@
 </header>
 
 <section class="cards">
-    <a href="git.html" class="card git">📁 Git & GitHub</a>
-    <a href="ci.html" class="card ci">⚙️ Intégration Continue</a>
-    <a href="docker.html" class="card docker">🐳 Docker</a>
-    <a href="cd.html" class="card cd">🚀 Déploiement</a>
+    <a href="git.html" class="card git" data-icon="📁">Git & GitHub</a>
+    <a href="ci.html" class="card ci" data-icon="⚙️">Intégration Continue</a>
+    <a href="docker.html" class="card docker" data-icon="🐳">Docker</a>
+    <a href="cd.html" class="card cd" data-icon="🚀">Déploiement</a>
 </section>
 
 <footer>
