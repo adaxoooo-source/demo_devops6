@@ -2,9 +2,10 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>🌟 Demo DevOps CI/CD 🌟</title>
+<title>🌟 Demo DevOps CI/CD - demo-devops6 🌟</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+    /* 🌈 Style global */
     body {
         margin: 0;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -14,53 +15,96 @@
         overflow-x: hidden;
     }
 
+    /* ✨ Header */
     header {
         padding: 70px 20px;
         background: linear-gradient(135deg, #ff512f, #dd2476);
         box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        position: relative;
         border-bottom-left-radius: 50% 20%;
         border-bottom-right-radius: 50% 20%;
-        position: relative;
     }
-    header h1 { font-size: 3em; margin-bottom: 10px; animation: slideIn 1s ease-out; text-shadow: 2px 2px 5px rgba(0,0,0,0.3);}
-    header p { font-size: 1.3em; animation: fadeIn 2s ease-in; opacity: 0.9; }
-    .badge { display: inline-block; margin-top: 20px; padding: 12px 35px; background: #00f260; color: #000; font-weight: bold; border-radius: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: pulse 2s infinite; }
+    header h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+        animation: slideIn 1s ease-out;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+    header p {
+        font-size: 1.3em;
+        animation: fadeIn 2s ease-in;
+        opacity: 0.9;
+    }
+    .badge {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 35px;
+        background: #00f260;
+        color: #000;
+        font-weight: bold;
+        border-radius: 30px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        animation: pulse 2s infinite;
+    }
 
-    .cards { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; padding: 50px 20px; }
-    .card { flex: 1 1 200px; max-width: 250px; background: rgba(255,255,255,0.15); padding: 35px; border-radius: 25px; font-size: 1.2em; font-weight: bold; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: transform 0.3s, background 0.3s; cursor: pointer; }
-    .card:hover { transform: translateY(-10px) scale(1.05); background: rgba(255,255,255,0.25); }
+    /* 🃏 Cartes des étapes DevOps */
+    .cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 50px 20px;
+    }
+    .card {
+        flex: 1 1 200px;
+        max-width: 250px;
+        background: rgba(255,255,255,0.15);
+        padding: 35px;
+        border-radius: 25px;
+        font-size: 1.2em;
+        font-weight: bold;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        transition: transform 0.3s, background 0.3s;
+        cursor: pointer;
+    }
+    .card:hover {
+        transform: translateY(-10px) scale(1.05);
+        background: rgba(255,255,255,0.25);
+    }
+
+    /* Couleurs spécifiques */
     .git { background: #f44336; }
     .ci { background: #4caf50; }
     .docker { background: #00bcd4; }
     .cd { background: #ff9800; }
 
+    /* 🦶 Footer */
     footer {
-        position: relative;
-        height: 150px;
-        background: linear-gradient(135deg, #ff416c, #ff4b2b);
-        overflow: hidden;
-    }
-    footer .rocket, footer .star {
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        font-size: 30px;
-        animation: float 4s infinite linear;
-    }
-    footer .rocket { color: #fff; bottom: -50px; left: 10%; }
-    footer .star { color: yellow; top: 20px; }
-
-    @keyframes float {
-        0% { transform: translateY(0) rotate(0deg); }
-        50% { transform: translateY(-80px) rotate(180deg); }
-        100% { transform: translateY(0) rotate(360deg); }
+        padding: 40px;
+        font-size: 1.1em;
+        background: rgba(0,0,0,0.2);
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
     }
 
-    @keyframes slideIn { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+    /* 📱 Responsive */
+    @media (max-width: 768px) {
+        header h1 { font-size: 2.2em; }
+        .cards { gap: 20px; padding: 30px 10px; }
+    }
 
-    @media (max-width: 768px) { header h1 { font-size: 2.2em; } .cards { gap: 20px; padding: 30px 10px; } }
+    /* 🔹 Animations */
+    @keyframes slideIn {
+        from { transform: translateY(-50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; } to { opacity: 1; }
+    }
+    @keyframes pulse {
+        0% { transform: scale(1); } 
+        50% { transform: scale(1.1); } 
+        100% { transform: scale(1); }
+    }
 </style>
 </head>
 <body>
@@ -79,11 +123,7 @@
 </section>
 
 <footer>
-    <div class="rocket">🚀</div>
-    <div class="star" style="left:20%;">⭐</div>
-    <div class="star" style="left:40%;">⭐</div>
-    <div class="star" style="left:60%;">⭐</div>
-    <div class="star" style="left:80%;">⭐</div>
+    <p>✨ Projet <strong>demo-devops6</strong> – Réalisé par Marie 💙</p>
 </footer>
 
 </body>
