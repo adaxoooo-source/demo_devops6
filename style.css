@@ -49,3 +49,33 @@ footer {
     padding: 30px;
     background: rgba(0,0,0,0.2);
 }
+.footer-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: rgba(0,0,0,0.25);
+    font-size: 1em;
+}
+
+.footer-nav p {
+    margin: 0;
+    font-weight: bold;
+    color: #fff;
+}
+
+.footer-nav button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #00f260, #0575e6);
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.footer-nav button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
