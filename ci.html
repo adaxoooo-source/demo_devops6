@@ -25,10 +25,28 @@ footer { padding:40px; background: rgba(0,0,0,0.2); font-size:1.1em; }
     <p>Configurez un pipeline CI pour votre projet afin de lancer automatiquement les tests et générer un build fiable à chaque modification du code.</p>
 </main>
 <footer>
-   <footer>
+ <footer class="footer-nav">
+    <button onclick="goBack()">⬅ Retour</button>
     <p>Pipeline CI/CD – Démonstration DevOps</p>
+    <button onclick="goNext()">Suivant ➡</button>
 </footer>
 
-</footer>
+<script>
+function goBack() {
+    window.history.back();
+}
+
+function goNext() {
+    const pages = ["git.html", "ci.html", "docker.html", "cd.html"];
+    const current = window.location.pathname.split("/").pop();
+    const index = pages.indexOf(current);
+
+    if (index !== -1 && index < pages.length - 1) {
+        window.location.href = pages[index + 1];
+    }
+}
+</script>
+
 </body>
 </html>
+
