@@ -1,17 +1,44 @@
-name: CI Test
+name: CI Pipeline
 
+# Déclenche le workflow à chaque push sur main ou dev
 on:
   push:
     branches:
       - main
+      - dev
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Récupérer le code du dépôt
       - name: Checkout du dépôt
         uses: actions/checkout@v3
 
-      - name: Test simple
-        run: echo "CI Pipeline exécuté avec succès !"
+      # 2️⃣ Installer PHP et Composer (si projet PHP)
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Installer les dépendances Composer
+        run: composer install --no-progress --no-interaction
+
+      # 3️⃣ Lancer les tests unitaires (ex: PHPUnit)
+      - name: Lancer les tests unitaires
+        run: vendor/bin/phpunit --colors=always
+
+      # 4️⃣ Générer un artefact (par exemple un build compressé)
+      - name: Générer l'artefact
+        run: zip -r demo-devops6.zip . -x '*.git*'
+
+      - name: Upload artefact
+        uses: actions/upload-artifact@v3
+        with:
+          name: demo-devops6-build
+          path: demo-devops6.zip
+
+      # 5️⃣ Afficher les logs de build
+      - name: Afficher message
+        run: echo "✅ CI exécuté avec succès sur la branche ${{ github.ref }} !"
