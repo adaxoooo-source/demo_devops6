@@ -1,111 +1,57 @@
+<?php
+$nombre_fichiers = 50; // change à 1000 si tu veux
+
+$couleurs = ['#f05032','#28a745','#0db7ed','#ff9800','#9c27b0','#e91e63','#00bcd4','#4caf50'];
+$emojis = ['🚀','🐳','⚙️','📁','✨','💙','🌈','🔥'];
+
+for ($i = 1; $i <= $nombre_fichiers; $i++) {
+    $nom_fichier = "index_$i.php";
+    $couleur1 = $couleurs[array_rand($couleurs)];
+    $couleur2 = $couleurs[array_rand($couleurs)];
+    $emoji = $emojis[array_rand($emojis)];
+
+    $contenu = <<<HTML
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>✨ Demo DevOps CI/CD ✨</title>
+    <title>Demo DevOps CI/CD #$i</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* 🌟 Style global */
         body {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1f1c2c, #928dab);
-            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, $couleur1, $couleur2);
+            color: white;
             text-align: center;
         }
-
-        /* 💫 Header */
-        header {
-            padding: 60px 20px;
-            background: linear-gradient(135deg, #ff416c, #ff4b2b);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-        header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-        }
-        header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-        .badge {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 30px;
-            background: #00c6ff;
-            color: #000;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 1.1em;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        /* 🃏 Cartes */
-        .cards {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            padding: 50px 20px;
-        }
-        .card {
-            flex: 1 1 200px;
-            max-width: 250px;
-            background: rgba(255,255,255,0.15);
-            padding: 30px;
-            border-radius: 20px;
-            font-size: 1.2em;
-            font-weight: bold;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: transform 0.3s, background 0.3s;
-            cursor: pointer;
-        }
-        .card:hover {
-            transform: translateY(-10px) scale(1.05);
-            background: rgba(255,255,255,0.25);
-        }
-
-        /* Couleurs des cartes */
-        .git { background: #f05032; }
-        .ci { background: #28a745; }
-        .docker { background: #0db7ed; }
-        .cd { background: #ff9800; }
-
-        /* 🦶 Footer */
-        footer {
-            padding: 40px;
-            font-size: 1.1em;
-            background: rgba(0,0,0,0.2);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        }
-
-        /* 📱 Responsive */
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.2em; }
-            .cards { gap: 20px; padding: 30px 10px; }
-        }
+        header { padding: 60px; }
+        header h1 { font-size: 3em; text-shadow: 2px 2px 5px rgba(0,0,0,0.3); }
+        .cards { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; padding: 40px; }
+        .card { background: rgba(255,255,255,0.15); padding: 30px; border-radius: 20px; flex: 1 1 200px; font-weight: bold; transition: transform 0.3s; }
+        .card:hover { transform: scale(1.05); background: rgba(255,255,255,0.25); }
+        footer { padding: 30px; }
     </style>
 </head>
-
 <body>
-
 <header>
-    <h1>🚀 Demo DevOps CI/CD</h1>
-    <p>Automatisation • Docker • Déploiement automatique</p>
-    <span class="badge">PIPELINE ACTIF</span>
+    <h1>$emoji Demo DevOps CI/CD #$i</h1>
+    <p>GitHub Actions • Docker • Déploiement automatique</p>
 </header>
-
 <section class="cards">
-    <div class="card git">📁 Git & GitHub</div>
-    <div class="card ci">⚙️ Intégration Continue</div>
-    <div class="card docker">🐳 Docker</div>
-    <div class="card cd">🚀 Déploiement</div>
+    <div class="card">📁 Git & GitHub</div>
+    <div class="card">⚙️ CI Automatisée</div>
+    <div class="card">🐳 Docker</div>
+    <div class="card">🚀 Déploiement</div>
 </section>
-
 <footer>
-    <p>✨ Projet DevOps – Réalisé par Marie 💙</p>
+    <p>Projet DevOps – Réalisé par Marie 💙</p>
 </footer>
-
 </body>
 </html>
+HTML;
+
+    file_put_contents($nom_fichier, $contenu);
+}
+
+echo "✅ $nombre_fichiers fichiers index_*.php générés avec succès !";
