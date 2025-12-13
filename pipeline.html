@@ -22,7 +22,6 @@ header {
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     border-bottom-left-radius: 50% 15%;
     border-bottom-right-radius: 50% 15%;
-    position: relative;
 }
 header h1 {
     font-size: 3em;
@@ -36,7 +35,7 @@ header p {
     animation: fadeIn 2s ease-in;
 }
 
-/* 🃏 Cartes pipeline avec images */
+/* 🃏 Cartes pipeline avec images seulement */
 .card-container {
     display: flex;
     justify-content: center;
@@ -46,8 +45,8 @@ header p {
 }
 
 .card {
-    flex: 1 1 220px;
-    max-width: 260px;
+    flex: 1 1 120px;
+    max-width: 150px;
     background: rgba(255,255,255,0.05);
     border-radius: 25px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);
@@ -56,26 +55,16 @@ header p {
     overflow: hidden;
     position: relative;
     text-align: center;
+    padding: 25px;
 }
 .card:hover {
-    transform: translateY(-15px) scale(1.05);
+    transform: translateY(-10px) scale(1.1);
     box-shadow: 0 25px 45px rgba(0,0,0,0.6);
     background: rgba(255,255,255,0.15);
 }
 .card img {
     width: 80px;
     height: 80px;
-    margin-top: 20px;
-}
-.card .title {
-    font-size: 1.3em;
-    margin: 15px 0 8px 0;
-    font-weight: bold;
-}
-.card .desc {
-    font-size: 0.95em;
-    opacity: 0.85;
-    margin-bottom: 20px;
 }
 
 /* Couleurs par type */
@@ -121,7 +110,7 @@ footer p {
 /* Responsive */
 @media (max-width: 768px) {
     .card-container { gap: 20px; padding: 20px; }
-    .card { font-size: 1.1em; padding-bottom: 20px; }
+    .card { padding: 15px; }
     header h1 { font-size: 2.2em; }
 }
 </style>
@@ -136,23 +125,15 @@ footer p {
 <div class="card-container">
     <div class="card git" onclick="window.location.href='git.html'">
         <img src="https://img.icons8.com/color/96/000000/github--v1.png" alt="GitHub">
-        <div class="title">Git & GitHub</div>
-        <div class="desc">Versionnez et gérez votre code facilement</div>
     </div>
     <div class="card ci" onclick="window.location.href='ci.html'">
         <img src="https://img.icons8.com/color/96/000000/settings.png" alt="CI">
-        <div class="title">Intégration Continue</div>
-        <div class="desc">Automatisez tests et builds pour fiabilité</div>
     </div>
     <div class="card docker" onclick="window.location.href='docker.html'">
         <img src="https://img.icons8.com/color/96/000000/docker.png" alt="Docker">
-        <div class="title">Docker</div>
-        <div class="desc">Construisez et publiez vos conteneurs</div>
     </div>
     <div class="card cd" onclick="window.location.href='cd.html'">
         <img src="https://img.icons8.com/color/96/000000/rocket.png" alt="Déploiement">
-        <div class="title">Déploiement</div>
-        <div class="desc">Livrez automatiquement votre application</div>
     </div>
 </div>
 
