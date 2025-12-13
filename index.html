@@ -27,8 +27,12 @@
     .badge { display: inline-block; margin-top: 20px; padding: 12px 35px; background: #00f260; color: #000; font-weight: bold; border-radius: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: pulse 2s infinite; }
 
     .cards { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; padding: 50px 20px; }
-    .card { flex: 1 1 200px; max-width: 250px; background: rgba(255,255,255,0.15); padding: 35px; border-radius: 25px; font-size: 1.2em; font-weight: bold; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: transform 0.3s, background 0.3s; cursor: pointer; }
-    .card:hover { transform: translateY(-10px) scale(1.05); background: rgba(255,255,255,0.25); }
+    .cards a {
+        text-decoration: none;
+        color: inherit;
+    }
+    .card { flex: 1 1 200px; max-width: 250px; background: rgba(255,255,255,0.15); padding: 35px; border-radius: 25px; font-size: 1.2em; font-weight: bold; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: transform 0.3s, background 0.3s, box-shadow 0.3s; cursor: pointer; }
+    .card:hover { transform: translateY(-10px) scale(1.05); background: rgba(255,255,255,0.25); box-shadow: 0 15px 40px rgba(0,0,0,0.7); }
     .git { background: #f44336; }
     .ci { background: #4caf50; }
     .docker { background: #00bcd4; }
@@ -72,10 +76,10 @@
 </header>
 
 <section class="cards">
-    <div class="card git">📁 Git & GitHub</div>
-    <div class="card ci">⚙️ Intégration Continue</div>
-    <div class="card docker">🐳 Docker</div>
-    <div class="card cd">🚀 Déploiement</div>
+    <a href="git.html" class="card git">📁 Git & GitHub</a>
+    <a href="ci.html" class="card ci">⚙️ Intégration Continue</a>
+    <a href="docker.html" class="card docker">🐳 Docker</a>
+    <a href="cd.html" class="card cd">🚀 Déploiement</a>
 </section>
 
 <footer>
