@@ -1,28 +1,28 @@
 <header>
-    <h1>🚀 Pipeline DevOps Pro</h1>
-    <p>Visualisez et contrôlez chaque étape de votre projet avec élégance ✨</p>
+    <h1>🚀 Mon Pipeline CI/CD</h1>
+    <p>Suivez chaque étape de votre projet DevOps en toute clarté ✨</p>
 </header>
 
 <div class="card-container">
     <div class="card git" onclick="window.location.href='git.html'">
         <div class="icon">📁</div>
         <div class="title">Git & GitHub</div>
-        <div class="desc">Gérez vos versions et codes facilement</div>
+        <div class="desc">Versionnez et gérez votre code facilement</div>
     </div>
     <div class="card ci" onclick="window.location.href='ci.html'">
         <div class="icon">⚙️</div>
         <div class="title">Intégration Continue</div>
-        <div class="desc">Automatisez tests et builds pour plus de fiabilité</div>
+        <div class="desc">Tests et builds automatiques pour fiabilité</div>
     </div>
     <div class="card docker" onclick="window.location.href='docker.html'">
         <div class="icon">🐳</div>
         <div class="title">Docker</div>
-        <div class="desc">Construisez et déployez vos conteneurs rapidement</div>
+        <div class="desc">Construisez et publiez vos conteneurs</div>
     </div>
     <div class="card cd" onclick="window.location.href='cd.html'">
         <div class="icon">🚀</div>
         <div class="title">Déploiement</div>
-        <div class="desc">Livrez vos applications automatiquement</div>
+        <div class="desc">Livrez automatiquement votre application</div>
     </div>
 </div>
 
@@ -31,8 +31,8 @@
     <div class="sparkle" style="top:35%; left:30%;"></div>
     <div class="sparkle" style="top:55%; left:70%;"></div>
     <div class="sparkle" style="top:75%; left:50%;"></div>
-    <p style="position:absolute; bottom:15px; width:100%; color:#00ffe0; font-weight:bold; font-size:1.1em; text-shadow:1px 1px 5px rgba(0,0,0,0.5);">
-        🎄✨ Profitez de votre pipeline DevOps avec style ! ✨🎄
+    <p style="position:absolute; bottom:15px; width:100%; color:#fff; font-weight:bold; text-shadow:1px 1px 3px rgba(0,0,0,0.5);">
+        ✨ Projet DevOps – Réalisé par Marie 💙
     </p>
 </footer>
 
@@ -48,12 +48,11 @@
     color: #fff;
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 .card:hover {
     transform: translateY(-15px) scale(1.05);
     box-shadow: 0 25px 45px rgba(0,0,0,0.6);
-    background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.25));
 }
 .card .icon {
     font-size: 2.5em;
@@ -65,7 +64,7 @@
 }
 .card .desc {
     font-size: 0.95em;
-    opacity: 0.85;
+    opacity: 0.8;
 }
 
 /* Footer étoiles animées */
@@ -81,29 +80,5 @@ footer .sparkle {
     0% { transform: translateY(0) rotate(0deg); opacity:1; }
     50% { transform: translateY(-80px) rotate(180deg); opacity:0.6; }
     100% { transform: translateY(0) rotate(360deg); opacity:1; }
-}
-
-/* Header animations */
-header h1 {
-    font-size: 3em;
-    margin-top: 50px;
-    text-shadow: 2px 2px 10px #000;
-    animation: slideIn 1s ease-out;
-}
-header p {
-    font-size: 1.3em;
-    margin-top: 20px;
-    opacity: 0.9;
-    animation: fadeIn 2s ease-in;
-}
-
-@keyframes slideIn { from { transform: translateY(-50px); opacity:0; } to { transform: translateY(0); opacity:1; } }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-
-/* Responsive */
-@media (max-width: 768px) {
-    .card-container { gap: 20px; padding: 20px; }
-    .card { font-size: 1.1em; padding: 25px; }
-    header h1 { font-size: 2.2em; }
 }
 </style>
