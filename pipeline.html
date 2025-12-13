@@ -37,7 +37,7 @@ header p {
     animation: fadeIn 2s ease-in;
 }
 
-/* 🃏 Cartes pipeline avec images */
+/* 🃏 Cartes pipeline avec images et texte */
 .card-container {
     display: flex;
     justify-content: center;
@@ -46,8 +46,8 @@ header p {
     padding: 50px 20px;
 }
 .card {
-    flex: 1 1 120px;
-    max-width: 150px;
+    flex: 1 1 140px;
+    max-width: 180px;
     background: rgba(255,255,255,0.05);
     border-radius: 25px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);
@@ -55,16 +55,26 @@ header p {
     transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
     overflow: hidden;
     text-align: center;
-    padding: 25px;
+    padding: 20px;
 }
 .card:hover {
-    transform: translateY(-10px) scale(1.1);
+    transform: translateY(-10px) scale(1.05);
     box-shadow: 0 25px 45px rgba(0,0,0,0.6);
     background: rgba(255,255,255,0.15);
 }
 .card img {
     width: 80px;
     height: 80px;
+    margin-bottom: 15px;
+}
+.card .title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.card .desc {
+    font-size: 0.95em;
+    opacity: 0.8;
 }
 
 /* Couleurs par type */
@@ -125,15 +135,23 @@ footer p {
 <div class="card-container">
     <div class="card git" onclick="navigateTo('git.html')">
         <img src="https://img.icons8.com/color/96/000000/github--v1.png" alt="GitHub">
+        <div class="title">Git & GitHub</div>
+        <div class="desc">Versionnez et gérez votre code facilement</div>
     </div>
     <div class="card ci" onclick="navigateTo('ci.html')">
         <img src="https://img.icons8.com/color/96/000000/settings.png" alt="CI">
+        <div class="title">Intégration Continue</div>
+        <div class="desc">Automatisez tests et builds pour fiabilité</div>
     </div>
     <div class="card docker" onclick="navigateTo('docker.html')">
         <img src="https://img.icons8.com/color/96/000000/docker.png" alt="Docker">
+        <div class="title">Docker</div>
+        <div class="desc">Construisez et publiez vos conteneurs</div>
     </div>
     <div class="card cd" onclick="navigateTo('cd.html')">
         <img src="https://img.icons8.com/color/96/000000/rocket.png" alt="Déploiement">
+        <div class="title">Déploiement</div>
+        <div class="desc">Livrez automatiquement votre application</div>
     </div>
 </div>
 
