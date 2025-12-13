@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>🚀 Pipeline DevOps Magnifique</title>
+<title>🚀 Pipeline CI/CD - GitHub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 /* 🌌 Fond et style global */
@@ -10,7 +10,7 @@ body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: #fff;
     overflow-x: hidden;
 }
@@ -18,22 +18,37 @@ body {
 /* ✨ Header */
 header {
     padding: 80px 20px;
-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    background: linear-gradient(135deg, #ff512f, #dd2476);
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    border-bottom-left-radius: 50% 15%;
-    border-bottom-right-radius: 50% 15%;
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
 }
 header h1 {
     font-size: 3em;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 header p {
     font-size: 1.3em;
     opacity: 0.9;
 }
+header .badge {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 35px;
+    background: #00f260;
+    color: #000;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+header .badge:hover {
+    transform: scale(1.1);
+}
 
-/* 🃏 Cartes pipeline */
+/* 🃏 Cartes des étapes */
 .cards {
     display: flex;
     justify-content: center;
@@ -47,7 +62,6 @@ header p {
     background: rgba(255,255,255,0.15);
     padding: 25px;
     border-radius: 25px;
-    font-size: 1.1em;
     font-weight: bold;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     transition: transform 0.3s, background 0.3s;
@@ -68,7 +82,7 @@ header p {
 }
 .card .desc {
     font-size: 0.95em;
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 /* Couleurs spécifiques */
@@ -89,36 +103,38 @@ footer {
 @media (max-width: 768px) {
     header h1 { font-size: 2.2em; }
     .cards { gap: 20px; padding: 30px 10px; }
+    .card { padding: 20px; }
 }
 </style>
 </head>
 <body>
 
 <header>
-    <h1>🚀 Pipeline DevOps Magnifique</h1>
-    <p>Suivez chaque étape de votre projet avec clarté ✨</p>
+    <h1>🚀 Pipeline CI/CD avec GitHub</h1>
+    <p>Découvrez chaque étape de votre DevOps de manière claire et interactive</p>
+    <span class="badge" onclick="window.location.href='pipeline.html'">PIPELINE ACTIF</span>
 </header>
 
 <section class="cards">
-    <div class="card git" onclick="window.location.href='git.html'">
+    <div class="card git">
         <img src="https://img.icons8.com/color/96/000000/github--v1.png" alt="GitHub">
         <div class="title">Git & GitHub</div>
-        <div class="desc">Versionnez et gérez votre code facilement</div>
+        <div class="desc">Versionnez votre code et gérez vos branches efficacement</div>
     </div>
-    <div class="card ci" onclick="window.location.href='ci.html'">
+    <div class="card ci">
         <img src="https://img.icons8.com/color/96/000000/settings.png" alt="CI">
         <div class="title">Intégration Continue</div>
-        <div class="desc">Automatisez tests et builds pour fiabilité</div>
+        <div class="desc">Automatisez les tests et builds pour un code fiable</div>
     </div>
-    <div class="card docker" onclick="window.location.href='docker.html'">
+    <div class="card docker">
         <img src="https://img.icons8.com/color/96/000000/docker.png" alt="Docker">
         <div class="title">Docker</div>
-        <div class="desc">Construisez et publiez vos conteneurs</div>
+        <div class="desc">Construisez et publiez vos conteneurs pour déploiement</div>
     </div>
-    <div class="card cd" onclick="window.location.href='cd.html'">
-        <img src="https://img.icons8.com/color/96/000000/rocket.png" alt="Déploiement">
+    <div class="card cd">
+        <img src="https://img.icons8.com/color/96/000000/rocket.png" alt="CD">
         <div class="title">Déploiement</div>
-        <div class="desc">Livrez automatiquement votre application</div>
+        <div class="desc">Livrez automatiquement votre application en production</div>
     </div>
 </section>
 
