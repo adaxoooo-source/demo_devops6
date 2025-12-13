@@ -2,39 +2,105 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>DevOps CI/CD Project</title>
+    <title>✨ Demo DevOps CI/CD ✨</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 🌟 Style global */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            color: #fff;
+            text-align: center;
+        }
+
+        /* 💫 Header */
+        header {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        }
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .badge {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 30px;
+            background: #00c6ff;
+            color: #000;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* 🃏 Cartes */
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 50px 20px;
+        }
+        .card {
+            flex: 1 1 200px;
+            max-width: 250px;
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s, background 0.3s;
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+            background: rgba(255,255,255,0.25);
+        }
+
+        /* Couleurs des cartes */
+        .git { background: #f05032; }
+        .ci { background: #28a745; }
+        .docker { background: #0db7ed; }
+        .cd { background: #ff9800; }
+
+        /* 🦶 Footer */
+        footer {
+            padding: 40px;
+            font-size: 1.1em;
+            background: rgba(0,0,0,0.2);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* 📱 Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            .cards { gap: 20px; padding: 30px 10px; }
+        }
+    </style>
 </head>
 
 <body>
 
-<header class="hero">
-    <h1>🚀 DevOps CI/CD Project</h1>
-    <p>Automatisation • Docker • Déploiement Cloud</p>
-    <span class="badge">CI/CD READY</span>
+<header>
+    <h1>🚀 Demo DevOps CI/CD</h1>
+    <p>Automatisation • Docker • Déploiement automatique</p>
+    <span class="badge">PIPELINE ACTIF</span>
 </header>
 
 <section class="cards">
-    <div class="card git">
-        <h2>📁 Git & GitHub</h2>
-        <p>Gestion du code et collaboration</p>
-    </div>
-
-    <div class="card ci">
-        <h2>⚙️ Intégration Continue</h2>
-        <p>Tests automatiques à chaque push</p>
-    </div>
-
-    <div class="card docker">
-        <h2>🐳 Docker</h2>
-        <p>Application containerisée</p>
-    </div>
-
-    <div class="card cd">
-        <h2>🚀 Déploiement</h2>
-        <p>Mise en production automatique</p>
-    </div>
+    <div class="card git">📁 Git & GitHub</div>
+    <div class="card ci">⚙️ Intégration Continue</div>
+    <div class="card docker">🐳 Docker</div>
+    <div class="card cd">🚀 Déploiement</div>
 </section>
 
 <footer>
