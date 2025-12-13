@@ -2,15 +2,15 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>🌟 Pipeline CI/CD 🌟</title>
+<title>🎄 Pipeline CI/CD - Noël 🎄</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-    /* 🌌 Fond et style global */
+    /* 🎅 Fond et style festif */
     body {
         margin: 0;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         text-align: center;
-        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        background: linear-gradient(135deg, #1a1a1a, #0b3d0b);
         color: #fff;
         overflow-x: hidden;
     }
@@ -19,17 +19,19 @@
     h1 {
         font-size: 3em;
         margin-top: 50px;
-        text-shadow: 2px 2px 10px #000;
+        text-shadow: 2px 2px 10px #900;
+        color: #ff0000;
         animation: slideIn 1s ease-out;
     }
     p {
         font-size: 1.3em;
         margin-top: 20px;
         opacity: 0.9;
+        color: #ffd700;
         animation: fadeIn 2s ease-in;
     }
 
-    /* 🃏 Cartes pipeline */
+    /* 🎁 Cartes pipeline */
     .card-container {
         display: flex;
         justify-content: center;
@@ -38,7 +40,7 @@
         margin-top: 50px;
     }
     .card {
-        background: rgba(255,255,255,0.15);
+        background: rgba(255,255,255,0.1);
         padding: 40px;
         border-radius: 25px;
         font-size: 1.3em;
@@ -54,25 +56,26 @@
         background: rgba(255,255,255,0.3);
     }
 
-    /* Couleurs des cartes */
-    .git { background: #f44336; }
-    .ci { background: #4caf50; }
-    .docker { background: #00bcd4; }
-    .cd { background: #ff9800; }
+    /* Couleurs festives */
+    .git { background: #d32f2f; }      /* Rouge Noël */
+    .ci { background: #388e3c; }       /* Vert sapin */
+    .docker { background: #fbc02d; }   /* Or */
+    .cd { background: #c2185b; }       /* Rouge foncé */
 
     /* 🎆 Animations */
     @keyframes slideIn { from { transform: translateY(-50px); opacity:0; } to { transform: translateY(0); opacity:1; } }
     @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
-    /* 🌟 Étoiles flottantes */
-    .star {
+    /* 🌟 Boules et étoiles flottantes */
+    .star, .ball {
         position: absolute;
-        width: 10px;
-        height: 10px;
-        background: yellow;
+        width: 15px;
+        height: 15px;
         border-radius: 50%;
         animation: floatStar 4s infinite linear;
     }
+    .star { background: yellow; }
+    .ball { background: red; }
     @keyframes floatStar {
         0% { transform: translateY(0) rotate(0deg); opacity:1; }
         50% { transform: translateY(-80px) rotate(180deg); opacity:0.6; }
@@ -89,8 +92,8 @@
 </head>
 <body>
 
-<h1>🚀 Pipeline CI/CD Actif !</h1>
-<p>Visualisez chaque étape de votre DevOps avec style ✨</p>
+<h1>🎄 Pipeline CI/CD Festif ! 🎄</h1>
+<p>Visualisez votre pipeline DevOps avec magie de Noël ✨</p>
 
 <div class="card-container">
     <div class="card git" onclick="window.location.href='git.html'">📁 Git & GitHub</div>
@@ -99,11 +102,11 @@
     <div class="card cd" onclick="window.location.href='cd.html'">🚀 Déploiement</div>
 </div>
 
-<!-- ✨ Étoiles flottantes -->
+<!-- 🎄 Boules et étoiles flottantes -->
 <div class="star" style="top:20%; left:10%;"></div>
 <div class="star" style="top:40%; left:30%;"></div>
-<div class="star" style="top:60%; left:70%;"></div>
-<div class="star" style="top:80%; left:50%;"></div>
+<div class="ball" style="top:60%; left:50%;"></div>
+<div class="ball" style="top:80%; left:70%;"></div>
 
 </body>
 </html>
