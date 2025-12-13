@@ -13,9 +13,7 @@ body {
     background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: #fff;
     overflow-x: hidden;
-    transition: opacity 0.8s;
 }
-.fade-out { opacity: 0; }
 
 /* ✨ Header animé */
 header {
@@ -24,6 +22,7 @@ header {
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     border-bottom-left-radius: 50% 15%;
     border-bottom-right-radius: 50% 15%;
+    position: relative;
 }
 header h1 {
     font-size: 3em;
@@ -37,7 +36,7 @@ header p {
     animation: fadeIn 2s ease-in;
 }
 
-/* 🃏 Cartes pipeline avec images et texte */
+/* 🃏 Cartes pipeline avec images */
 .card-container {
     display: flex;
     justify-content: center;
@@ -45,36 +44,38 @@ header p {
     gap: 30px;
     padding: 50px 20px;
 }
+
 .card {
-    flex: 1 1 140px;
-    max-width: 180px;
+    flex: 1 1 220px;
+    max-width: 260px;
     background: rgba(255,255,255,0.05);
     border-radius: 25px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
     overflow: hidden;
+    position: relative;
     text-align: center;
-    padding: 20px;
 }
 .card:hover {
-    transform: translateY(-10px) scale(1.05);
+    transform: translateY(-15px) scale(1.05);
     box-shadow: 0 25px 45px rgba(0,0,0,0.6);
     background: rgba(255,255,255,0.15);
 }
 .card img {
     width: 80px;
     height: 80px;
-    margin-bottom: 15px;
+    margin-top: 20px;
 }
 .card .title {
-    font-size: 1.2em;
+    font-size: 1.3em;
+    margin: 15px 0 8px 0;
     font-weight: bold;
-    margin-bottom: 8px;
 }
 .card .desc {
     font-size: 0.95em;
-    opacity: 0.8;
+    opacity: 0.85;
+    margin-bottom: 20px;
 }
 
 /* Couleurs par type */
@@ -83,7 +84,7 @@ header p {
 .docker { border-top: 5px solid #00bcd4; }
 .cd { border-top: 5px solid #ff9800; }
 
-/* Footer étoiles animées */
+/* Footer animations étoiles */
 footer {
     position: relative;
     height: 150px;
@@ -120,7 +121,7 @@ footer p {
 /* Responsive */
 @media (max-width: 768px) {
     .card-container { gap: 20px; padding: 20px; }
-    .card { padding: 15px; }
+    .card { font-size: 1.1em; padding-bottom: 20px; }
     header h1 { font-size: 2.2em; }
 }
 </style>
@@ -133,22 +134,22 @@ footer p {
 </header>
 
 <div class="card-container">
-    <div class="card git" onclick="navigateTo('git.html')">
+    <div class="card git" onclick="window.location.href='git.html'">
         <img src="https://img.icons8.com/color/96/000000/github--v1.png" alt="GitHub">
         <div class="title">Git & GitHub</div>
         <div class="desc">Versionnez et gérez votre code facilement</div>
     </div>
-    <div class="card ci" onclick="navigateTo('ci.html')">
+    <div class="card ci" onclick="window.location.href='ci.html'">
         <img src="https://img.icons8.com/color/96/000000/settings.png" alt="CI">
         <div class="title">Intégration Continue</div>
         <div class="desc">Automatisez tests et builds pour fiabilité</div>
     </div>
-    <div class="card docker" onclick="navigateTo('docker.html')">
+    <div class="card docker" onclick="window.location.href='docker.html'">
         <img src="https://img.icons8.com/color/96/000000/docker.png" alt="Docker">
         <div class="title">Docker</div>
         <div class="desc">Construisez et publiez vos conteneurs</div>
     </div>
-    <div class="card cd" onclick="navigateTo('cd.html')">
+    <div class="card cd" onclick="window.location.href='cd.html'">
         <img src="https://img.icons8.com/color/96/000000/rocket.png" alt="Déploiement">
         <div class="title">Déploiement</div>
         <div class="desc">Livrez automatiquement votre application</div>
@@ -162,15 +163,6 @@ footer p {
     <div class="sparkle" style="top:75%; left:50%;"></div>
     <p>✨ Profitez de votre pipeline DevOps visuel et interactif ! ✨</p>
 </footer>
-
-<script>
-function navigateTo(url) {
-    document.body.classList.add('fade-out');
-    setTimeout(() => {
-        window.location.href = url;
-    }, 600);
-}
-</script>
 
 </body>
 </html>
