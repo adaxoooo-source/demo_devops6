@@ -13,7 +13,9 @@ body {
     background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: #fff;
     overflow-x: hidden;
+    transition: opacity 0.8s;
 }
+.fade-out { opacity: 0; }
 
 /* ✨ Header animé */
 header {
@@ -35,7 +37,7 @@ header p {
     animation: fadeIn 2s ease-in;
 }
 
-/* 🃏 Cartes pipeline avec images seulement */
+/* 🃏 Cartes pipeline avec images */
 .card-container {
     display: flex;
     justify-content: center;
@@ -43,7 +45,6 @@ header p {
     gap: 30px;
     padding: 50px 20px;
 }
-
 .card {
     flex: 1 1 120px;
     max-width: 150px;
@@ -53,7 +54,6 @@ header p {
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
     overflow: hidden;
-    position: relative;
     text-align: center;
     padding: 25px;
 }
@@ -73,7 +73,7 @@ header p {
 .docker { border-top: 5px solid #00bcd4; }
 .cd { border-top: 5px solid #ff9800; }
 
-/* Footer animations étoiles */
+/* Footer étoiles animées */
 footer {
     position: relative;
     height: 150px;
@@ -123,16 +123,16 @@ footer p {
 </header>
 
 <div class="card-container">
-    <div class="card git" onclick="window.location.href='git.html'">
+    <div class="card git" onclick="navigateTo('git.html')">
         <img src="https://img.icons8.com/color/96/000000/github--v1.png" alt="GitHub">
     </div>
-    <div class="card ci" onclick="window.location.href='ci.html'">
+    <div class="card ci" onclick="navigateTo('ci.html')">
         <img src="https://img.icons8.com/color/96/000000/settings.png" alt="CI">
     </div>
-    <div class="card docker" onclick="window.location.href='docker.html'">
+    <div class="card docker" onclick="navigateTo('docker.html')">
         <img src="https://img.icons8.com/color/96/000000/docker.png" alt="Docker">
     </div>
-    <div class="card cd" onclick="window.location.href='cd.html'">
+    <div class="card cd" onclick="navigateTo('cd.html')">
         <img src="https://img.icons8.com/color/96/000000/rocket.png" alt="Déploiement">
     </div>
 </div>
@@ -144,6 +144,15 @@ footer p {
     <div class="sparkle" style="top:75%; left:50%;"></div>
     <p>✨ Profitez de votre pipeline DevOps visuel et interactif ! ✨</p>
 </footer>
+
+<script>
+function navigateTo(url) {
+    document.body.classList.add('fade-out');
+    setTimeout(() => {
+        window.location.href = url;
+    }, 600);
+}
+</script>
 
 </body>
 </html>
