@@ -121,23 +121,87 @@ footer .sparkle {
 <body>
 
 <header>
-    <h1>🚀 Pipeline CI/CD Actif !</h1>
-    <p>Visualisez chaque étape de votre DevOps avec style ✨</p>
+    <h1>🚀 Mon Pipeline CI/CD</h1>
+    <p>Suivez chaque étape de votre projet DevOps en toute clarté ✨</p>
 </header>
 
 <div class="card-container">
-    <div class="card git" onclick="window.location.href='git.html'">📁 Git & GitHub</div>
-    <div class="card ci" onclick="window.location.href='ci.html'">⚙️ Intégration Continue</div>
-    <div class="card docker" onclick="window.location.href='docker.html'">🐳 Docker</div>
-    <div class="card cd" onclick="window.location.href='cd.html'">🚀 Déploiement</div>
+    <div class="card git" onclick="window.location.href='git.html'">
+        <div class="icon">📁</div>
+        <div class="title">Git & GitHub</div>
+        <div class="desc">Versionnez et gérez votre code facilement</div>
+    </div>
+    <div class="card ci" onclick="window.location.href='ci.html'">
+        <div class="icon">⚙️</div>
+        <div class="title">Intégration Continue</div>
+        <div class="desc">Tests et builds automatiques pour fiabilité</div>
+    </div>
+    <div class="card docker" onclick="window.location.href='docker.html'">
+        <div class="icon">🐳</div>
+        <div class="title">Docker</div>
+        <div class="desc">Construisez et publiez vos conteneurs</div>
+    </div>
+    <div class="card cd" onclick="window.location.href='cd.html'">
+        <div class="icon">🚀</div>
+        <div class="title">Déploiement</div>
+        <div class="desc">Livrez automatiquement votre application</div>
+    </div>
 </div>
 
 <footer>
-    <div class="sparkle" style="top:20%; left:10%;"></div>
-    <div class="sparkle" style="top:40%; left:30%;"></div>
-    <div class="sparkle" style="top:60%; left:70%;"></div>
-    <div class="sparkle" style="top:80%; left:50%;"></div>
+    <div class="sparkle" style="top:15%; left:10%;"></div>
+    <div class="sparkle" style="top:35%; left:30%;"></div>
+    <div class="sparkle" style="top:55%; left:70%;"></div>
+    <div class="sparkle" style="top:75%; left:50%;"></div>
+    <p style="position:absolute; bottom:15px; width:100%; color:#fff; font-weight:bold; text-shadow:1px 1px 3px rgba(0,0,0,0.5);">
+        ✨ Projet DevOps – Réalisé par Marie 💙
+    </p>
 </footer>
 
-</body>
-</html>
+<style>
+/* Cartes améliorées */
+.card {
+    flex: 1 1 220px;
+    max-width: 260px;
+    background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.15));
+    padding: 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    color: #fff;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.6);
+}
+.card .icon {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+.card .title {
+    font-size: 1.3em;
+    margin-bottom: 8px;
+}
+.card .desc {
+    font-size: 0.95em;
+    opacity: 0.8;
+}
+
+/* Footer étoiles animées */
+footer .sparkle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #ffd700;
+    border-radius: 50%;
+    animation: float 5s infinite linear;
+}
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); opacity:1; }
+    50% { transform: translateY(-80px) rotate(180deg); opacity:0.6; }
+    100% { transform: translateY(0) rotate(360deg); opacity:1; }
+}
+</style>
+
