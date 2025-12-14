@@ -2,149 +2,158 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>🌈 Demo DevOps CI/CD – WOW Edition 🌈</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo DevOps CI/CD</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-    body {
-        margin: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-        color: #fff;
-        text-align: center;
-        overflow-x: hidden;
-    }
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: #0f172a;
+    color: #fff;
+  }
 
-    header {
-        padding: 80px 20px;
-        background: linear-gradient(135deg, #ff416c, #ff4b2b);
-        border-bottom-left-radius: 50% 20%;
-        border-bottom-right-radius: 50% 20%;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        position: relative;
-        overflow: hidden;
-    }
+  .header {
+    background: linear-gradient(90deg, #ff4d4d, #ff6666);
+    text-align: center;
+    padding: 80px 20px 50px;
+    position: relative;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
 
-    header h1 {
-        font-size: 3em;
-        margin-bottom: 10px;
-        animation: slideIn 1s ease-out;
-        text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-    }
-    header p {
-        font-size: 1.3em;
-        opacity: 0.9;
-        animation: fadeIn 2s ease-in;
-    }
-    .badge {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 12px 40px;
-        background: linear-gradient(45deg, #00f260, #0575e6);
-        color: #000;
-        font-weight: bold;
-        border-radius: 30px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-        animation: pulseGlow 2s infinite;
-    }
+  .header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
 
-    .cards {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 30px;
-        padding: 50px 20px;
-        perspective: 1000px;
-    }
+  .header p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
 
-    .cards a {
-        text-decoration: none;
-        color: inherit;
-    }
+  .pipeline-btn {
+    padding: 15px 40px;
+    font-weight: 700;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #00ff94, #00bfff);
+    color: #000;
+    cursor: pointer;
+    transition: 0.3s;
+  }
 
-    .card {
-        flex: 1 1 200px;
-        max-width: 250px;
-        background: rgba(255,255,255,0.15);
-        padding: 40px;
-        border-radius: 25px;
-        font-size: 1.2em;
-        font-weight: bold;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        transition: transform 0.5s, background 0.5s, box-shadow 0.5s;
-        cursor: pointer;
-        transform-style: preserve-3d;
-        position: relative;
-    }
+  .pipeline-btn:hover {
+    transform: scale(1.05);
+  }
 
-    .card:hover {
-        transform: rotateY(15deg) rotateX(10deg) translateY(-10px);
-        background: rgba(255,255,255,0.35);
-        box-shadow: 0 20px 50px rgba(0,0,0,0.7);
-    }
+  .steps {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: -40px;
+    flex-wrap: wrap;
+  }
 
-    /* Icon floating animation inside card */
-    .card::before {
-        content: attr(data-icon);
-        position: absolute;
-        top: -20px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 3em;
-        animation: floatIcon 3s ease-in-out infinite;
-    }
+  .step-card {
+    flex: 1 1 200px;
+    max-width: 220px;
+    background-color: #1e293b;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+  }
 
-    .git { background: #f44336; --icon: "📁"; }
-    .ci { background: #4caf50; --icon: "⚙️"; }
-    .docker { background: #00bcd4; --icon: "🐳"; }
-    .cd { background: #ff9800; --icon: "🚀"; }
+  .step-card:hover {
+    transform: translateY(-10px);
+    background-color: #334155;
+  }
 
-    footer {
-        position: relative;
-        height: 150px;
-        background: linear-gradient(135deg, #ff416c, #ff4b2b);
-        overflow: hidden;
-    }
-    footer .rocket, footer .star {
-        position: absolute;
-        font-size: 30px;
-        animation: float 4s infinite linear;
-    }
-    footer .rocket { color: #fff; bottom: -50px; left: 10%; }
-    footer .star { color: yellow; top: 20px; }
+  .step-card img {
+    width: 50px;
+    margin-bottom: 15px;
+  }
 
-    @keyframes float { 0% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-80px) rotate(180deg); } 100% { transform: translateY(0) rotate(360deg); } }
-    @keyframes slideIn { from { transform: translateY(-50px); opacity:0; } to { transform: translateY(0); opacity:1; } }
-    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-    @keyframes pulseGlow { 0%,100% { box-shadow: 0 0 15px #00f260; } 50% { box-shadow: 0 0 35px #0575e6; } }
-    @keyframes floatIcon { 0% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-15px); } 100% { transform: translateX(-50%) translateY(0); } }
+  .step-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
 
-    @media (max-width:768px) { header h1{ font-size:2.2em; } .cards { gap:20px; padding:30px 10px; } }
+  .step-card p {
+    font-size: 0.95rem;
+    color: #a1a1aa;
+  }
+
+  .status {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .status span {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    background-color: #06b6d4;
+    color: #000;
+    transition: 0.3s;
+  }
+
+  .status span.failed {
+    background-color: #f87171;
+  }
 </style>
 </head>
 <body>
 
-<header>
+  <div class="header">
     <h1>🚀 Demo DevOps CI/CD</h1>
     <p>Automatisation • Docker • Déploiement automatique</p>
-<span class="badge" onclick="window.location.href='pipeline.html';">
-    PIPELINE ACTIF
-</span>
-</header>
+    <button class="pipeline-btn" onclick="togglePipeline()">PIPELINE ACTIF</button>
+  </div>
 
-<section class="cards">
-    <a href="git.html" class="card git" data-icon="📁">Git & GitHub</a>
-    <a href="ci.html" class="card ci" data-icon="⚙️">Intégration Continue</a>
-    <a href="docker.html" class="card docker" data-icon="🐳">Docker</a>
-    <a href="cd.html" class="card cd" data-icon="🚀">Déploiement</a>
-</section>
+  <div class="steps">
+    <div class="step-card">
+      <img src="https://img.icons8.com/color/96/000000/git.png" alt="Git & GitHub">
+      <h3>Git & GitHub</h3>
+      <p>Versionnage du code et gestion des branches</p>
+    </div>
+    <div class="step-card">
+      <img src="https://img.icons8.com/color/96/000000/settings.png" alt="CI">
+      <h3>Intégration Continue</h3>
+      <p>Tests unitaires et build automatique</p>
+    </div>
+    <div class="step-card">
+      <img src="https://img.icons8.com/color/96/000000/docker.png" alt="Docker">
+      <h3>Docker</h3>
+      <p>Construction et publication de l'image</p>
+    </div>
+    <div class="step-card">
+      <img src="https://img.icons8.com/color/96/000000/rocket.png" alt="Déploiement">
+      <h3>Déploiement</h3>
+      <p>Mise en production automatique</p>
+    </div>
+  </div>
 
-<footer>
-    <div class="rocket">🚀</div>
-    <div class="star" style="left:20%;">⭐</div>
-    <div class="star" style="left:40%;">⭐</div>
-    <div class="star" style="left:60%;">⭐</div>
-    <div class="star" style="left:80%;">⭐</div>
-</footer>
+  <div class="status">
+    <h2>Statut du pipeline :</h2>
+    <span id="pipelineStatus">Actif</span>
+  </div>
+
+<script>
+  function togglePipeline() {
+    const status = document.getElementById('pipelineStatus');
+    if (status.textContent === "Actif") {
+      status.textContent = "Échec";
+      status.classList.add('failed');
+    } else {
+      status.textContent = "Actif";
+      status.classList.remove('failed');
+    }
+  }
+</script>
 
 </body>
 </html>
