@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>🎉 Fin du Pipeline CI/CD</title>
+<title>🎉 End of CI/CD Pipeline</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body {
@@ -54,8 +54,13 @@ header p {
     height: 100px;
     margin-bottom: 20px;
 }
-button {
+.button-container {
     margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+button {
     padding: 12px 25px;
     font-size: 1em;
     font-weight: bold;
@@ -68,6 +73,9 @@ button {
     transition: transform 0.3s;
 }
 button:hover { transform: scale(1.1); }
+button.next {
+    background: #ffdd00;
+}
 
 @keyframes slideIn { from { transform: translateY(-50px); opacity:0; } to { transform: translateY(0); opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -76,18 +84,20 @@ button:hover { transform: scale(1.1); }
 <body>
 
 <header>
-    <h1>🎉 Félicitations !</h1>
-    <p>Vous avez complété le pipeline CI/CD avec succès</p>
+    <h1>🎉 Congratulations!</h1>
+    <p>You have successfully completed the CI/CD pipeline</p>
 </header>
 
 <div class="container">
     <div class="card">
-        <img src="https://img.icons8.com/color/96/000000/checked--v1.png" alt="Fin du projet">
-        <p>Merci beaucoup pour votre attention 🙏</p>
-        <p>Ce projet CI/CD illustre un pipeline DevOps complet, interactif et fonctionnel.</p>
-        <p>Nous espérons que cette démonstration vous a été utile et inspirante ! 💙</p>
-        <button onclick="window.location.href='index.html'">🏠 Back to Home</button>
-
+        <img src="https://img.icons8.com/color/96/000000/checked--v1.png" alt="Project Complete">
+        <p>Thank you very much for your attention 🙏</p>
+        <p>This CI/CD project demonstrates a complete and interactive DevOps pipeline.</p>
+        <p>We hope this demonstration was useful and inspiring! 💙</p>
+        <div class="button-container">
+            <button onclick="window.location.href='index.html'">🏠 Back to Home</button>
+            <button class="next" onclick="alert('No next page yet!')">➡️ Next</button>
+        </div>
     </div>
 </div>
 
