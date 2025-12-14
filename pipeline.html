@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>🚀 Pipeline CI/CD - Demo DevOps</title>
+<title>🚀 Pipeline CI/CD - GitHub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 /* 🌌 Fond et style global */
@@ -44,9 +44,11 @@ header .badge {
     cursor: pointer;
     transition: transform 0.3s;
 }
-header .badge:hover { transform: scale(1.1); }
+header .badge:hover {
+    transform: scale(1.1);
+}
 
-/* 🃏 Cartes des étapes DevOps */
+/* 🃏 Cartes des étapes */
 .cards {
     display: flex;
     justify-content: center;
@@ -64,7 +66,6 @@ header .badge:hover { transform: scale(1.1); }
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     transition: transform 0.3s, background 0.3s;
     cursor: pointer;
-    text-align: center;
 }
 .card:hover {
     transform: translateY(-10px) scale(1.05);
@@ -84,7 +85,7 @@ header .badge:hover { transform: scale(1.1); }
     opacity: 0.85;
 }
 
-/* Couleurs par type */
+/* Couleurs spécifiques */
 .git { border-top: 5px solid #f44336; }
 .ci { border-top: 5px solid #4caf50; }
 .docker { border-top: 5px solid #00bcd4; }
@@ -109,28 +110,28 @@ footer {
 <body>
 
 <header>
-    <h1>🚀 Pipeline CI/CD</h1>
-    <p>Visualisez chaque étape de votre DevOps avec texte et images ✨</p>
+    <h1>🚀 Pipeline CI/CD avec GitHub</h1>
+    <p>Découvrez chaque étape de votre DevOps de manière claire et interactive</p>
     <span class="badge" onclick="window.location.href='pipeline.html'">PIPELINE ACTIF</span>
 </header>
 
 <section class="cards">
-    <div class="card git" onclick="window.location.href='git.html'">
+    <div class="card git">
         <img src="https://img.icons8.com/color/96/000000/github--v1.png" alt="GitHub">
         <div class="title">Git & GitHub</div>
-        <div class="desc">Versionnez votre code et gérez vos branches facilement</div>
+        <div class="desc">Versionnez votre code et gérez vos branches efficacement</div>
     </div>
-    <div class="card ci" onclick="window.location.href='ci.html'">
+    <div class="card ci">
         <img src="https://img.icons8.com/color/96/000000/settings.png" alt="CI">
         <div class="title">Intégration Continue</div>
         <div class="desc">Automatisez les tests et builds pour un code fiable</div>
     </div>
-    <div class="card docker" onclick="window.location.href='docker.html'">
+    <div class="card docker">
         <img src="https://img.icons8.com/color/96/000000/docker.png" alt="Docker">
         <div class="title">Docker</div>
-        <div class="desc">Construisez et publiez vos conteneurs facilement</div>
+        <div class="desc">Construisez et publiez vos conteneurs pour déploiement</div>
     </div>
-    <div class="card cd" onclick="window.location.href='cd.html'">
+    <div class="card cd">
         <img src="https://img.icons8.com/color/96/000000/rocket.png" alt="CD">
         <div class="title">Déploiement</div>
         <div class="desc">Livrez automatiquement votre application en production</div>
