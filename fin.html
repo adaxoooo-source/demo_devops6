@@ -2,64 +2,58 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>🎉 Fin du Pipeline CI/CD</title>
+<title>🔧 Fin du Pipeline CI/CD</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
-    background: linear-gradient(135deg, #11998e, #38ef7d);
+    background: linear-gradient(135deg, #2b2b2b, #4d4d4d);
     color: #fff;
     overflow-x: hidden;
 }
+
+/* Header métallique */
 header {
     padding: 60px 20px;
-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    background: linear-gradient(135deg, #3a3a3a, #6e6e6e);
     border-bottom-left-radius: 50% 15%;
     border-bottom-right-radius: 50% 15%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 header h1 {
     font-size: 3em;
     margin-bottom: 15px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-    animation: slideIn 1s ease-out;
+    text-shadow: 2px 2px 5px #000;
 }
 header p {
     font-size: 1.3em;
+    margin-bottom: 40px;
     opacity: 0.9;
-    animation: fadeIn 2s ease-in;
 }
-.container {
-    padding: 50px 20px;
-}
+
+/* Card métallique */
+.container { padding: 50px 20px; }
 .card {
-    background: rgba(255,255,255,0.15);
+    background: linear-gradient(145deg, #5a5a5a, #2f2f2f);
     border-radius: 25px;
     padding: 40px;
     max-width: 500px;
     margin: 0 auto;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.7);
     font-size: 1.2em;
     line-height: 1.6;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 25px 45px rgba(0,0,0,0.6);
+    border: 2px solid #888;
 }
 .card img {
     width: 100px;
     height: 100px;
     margin-bottom: 20px;
 }
-.button-container {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
+
+/* Boutons chrome/métal */
+.button-container { margin-top: 30px; display: flex; justify-content: center; gap: 20px; }
 button {
     padding: 12px 25px;
     font-size: 1em;
@@ -67,36 +61,30 @@ button {
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    background: #00f260;
+    background: linear-gradient(145deg, #c0c0c0, #7f7f7f);
     color: #000;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transition: transform 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5), inset 0 -3px 5px rgba(255,255,255,0.3);
+    transition: transform 0.3s, background 0.3s;
 }
-button:hover { transform: scale(1.1); }
-button.next {
-    background: #ffdd00;
-}
+button:hover { transform: scale(1.05); background: linear-gradient(145deg, #7f7f7f, #c0c0c0); }
 
-@keyframes slideIn { from { transform: translateY(-50px); opacity:0; } to { transform: translateY(0); opacity:1; } }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 </style>
 </head>
 <body>
 
 <header>
-    <h1>🎉 Félicitations !</h1>
-    <p>Vous avez complété avec succès le pipeline CI/CD</p>
+    <h1>🔧 Fin du Pipeline CI/CD</h1>
+    <p>Merci d’avoir suivi ce projet avec attention ⚙️</p>
 </header>
 
 <div class="container">
     <div class="card">
-        <img src="https://img.icons8.com/color/96/000000/checked--v1.png" alt="Projet terminé">
-        <p>Merci beaucoup pour votre attention 🙏</p>
-        <p>Ce projet CI/CD illustre un pipeline DevOps complet et interactif.</p>
-        <p>Nous espérons que cette démonstration vous a été utile et inspirante ! 💙</p>
+        <img src="https://img.icons8.com/ios-filled/100/ffffff/checked.png" alt="Project Complete">
+        <p>Ce projet CI/CD illustre un pipeline complet et fonctionnel.</p>
+        <p>Votre attention et vos efforts sont appréciés ! 🛠️</p>
         <div class="button-container">
-            <button onclick="window.location.href='index.html'">🏠Back to Home</button>
-            <button class="next" onclick="window.location.href='merci.html'">➡️Next</button>
+            <button onclick="window.location.href='index.html'">🏠 Back to Home</button>
+    <button onclick="window.location.href='pipeline.html'">➡️ Review the Pipeline</button>
         </div>
     </div>
 </div>
