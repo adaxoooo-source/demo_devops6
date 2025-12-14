@@ -2,181 +2,56 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>🚀 Pipeline CI/CD Magique</title>
+<title>🚀 Pipeline CI/CD</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-/* 🌌 Style global */
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: #fff;
-    overflow-x: hidden;
-    position: relative;
-}
-
-/* ✨ Header */
-header {
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #ff512f, #dd2476);
-    border-bottom-left-radius: 50% 15%;
-    border-bottom-right-radius: 50% 15%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-header h1 {
-    font-size: 3em;
-    margin-bottom: 15px;
-}
-header p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-.badge {
-    display: inline-block;
-    padding: 15px 35px;
-    background: #00f260;
-    color: #000;
-    font-weight: bold;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transition: transform 0.3s;
-}
-.badge:hover {
-    transform: scale(1.1);
-}
-
-/* ✨ Cartes pipeline */
-.card-container {
-    display: none;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin: 50px 20px;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-.card-container.show {
-    display: flex;
-    opacity: 1;
-}
-.card {
-    flex: 1 1 180px;
-    max-width: 220px;
-    background: rgba(255,255,255,0.15);
-    border-radius: 25px;
-    padding: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    cursor: pointer;
-    transition: transform 0.4s, background 0.4s;
-    text-align: center;
-}
-.card:hover {
-    transform: translateY(-10px) scale(1.05);
-    background: rgba(255,255,255,0.25);
-}
-.card img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
-}
-.card .title {
-    font-size: 1.2em;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-.card .desc {
-    font-size: 0.95em;
-    opacity: 0.8;
-}
-
-/* Couleurs spécifiques */
-.git { border-top: 5px solid #f44336; }
-.ci { border-top: 5px solid #4caf50; }
-.docker { border-top: 5px solid #00bcd4; }
-.cd { border-top: 5px solid #ff9800; }
-
-/* ✨ Étoiles flottantes */
-.star {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: #ffd700;
-    border-radius: 50%;
-    animation: floatStar 6s infinite linear;
-}
-@keyframes floatStar {
-    0% { transform: translateY(0) rotate(0deg); opacity:1; }
-    50% { transform: translateY(-100px) rotate(180deg); opacity:0.5; }
-    100% { transform: translateY(0) rotate(360deg); opacity:1; }
-}
-
-/* Footer */
-footer {
-    padding: 30px;
-    font-size: 1.1em;
-    background: rgba(0,0,0,0.2);
-    margin-top: 50px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    header h1 { font-size: 2.2em; }
-    .card-container { gap: 20px; margin: 30px 10px; }
-}
+body { margin:0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align:center; background:linear-gradient(135deg,#1e3c72,#2a5298); color:#fff;}
+header { padding:80px 20px; background:linear-gradient(135deg,#ff7e5f,#feb47b); border-bottom-left-radius:50% 15%; border-bottom-right-radius:50% 15%;}
+header h1{ font-size:3em; margin-bottom:15px;}
+header p{ font-size:1.3em; opacity:0.9;}
+.card-container { display:flex; justify-content:center; flex-wrap:wrap; gap:30px; padding:50px 20px;}
+.card { flex:1 1 150px; max-width:180px; background:rgba(255,255,255,0.05); border-radius:25px; box-shadow:0 15px 35px rgba(0,0,0,0.5); cursor:pointer; padding:25px; text-align:center; }
+.card:hover{ transform: translateY(-10px) scale(1.1); background: rgba(255,255,255,0.15);}
+.card img{ width:80px; height:80px;}
+.card .title{ font-size:1.1em; margin-top:10px; }
+.card .desc{ font-size:0.9em; margin-top:5px; }
+footer{ padding:40px; font-size:1.1em; background: rgba(0,0,0,0.2);}
+button{ padding:10px 20px; margin:5px; font-size:1em; cursor:pointer;}
 </style>
 </head>
 <body>
 
 <header>
-    <h1>🚀 Pipeline CI/CD Magique</h1>
-    <p>Découvrez chaque étape avec texte, images et animations ✨</p>
-    <span class="badge" onclick="showPipeline()">PIPELINE ACTIF</span>
+    <h1>🚀 Pipeline CI/CD Actif</h1>
+    <p>Explorez les étapes de votre projet DevOps ✨</p>
 </header>
 
-<!-- 🌟 Cartes pipeline -->
-<section class="card-container" id="pipelineCards">
+<div class="card-container">
     <div class="card git" onclick="window.location.href='git.html'">
-        <img src="https://img.icons8.com/color/96/000000/github--v1.png" alt="GitHub">
+        <img src="https://img.icons8.com/color/96/000000/github--v1.png">
         <div class="title">Git & GitHub</div>
-        <div class="desc">Versionnez votre code et gérez vos branches facilement</div>
+        <div class="desc">Versionnez votre code facilement</div>
     </div>
     <div class="card ci" onclick="window.location.href='ci.html'">
-        <img src="https://img.icons8.com/color/96/000000/settings.png" alt="CI">
+        <img src="https://img.icons8.com/color/96/000000/settings.png">
         <div class="title">Intégration Continue</div>
-        <div class="desc">Automatisez tests et builds pour un code fiable</div>
+        <div class="desc">Automatisez les tests et builds</div>
     </div>
     <div class="card docker" onclick="window.location.href='docker.html'">
-        <img src="https://img.icons8.com/color/96/000000/docker.png" alt="Docker">
+        <img src="https://img.icons8.com/color/96/000000/docker.png">
         <div class="title">Docker</div>
-        <div class="desc">Construisez et publiez vos conteneurs facilement</div>
+        <div class="desc">Construisez vos conteneurs</div>
     </div>
-    <div class="card cd" onclick="window.location.href='cd.html'">
-        <img src="https://img.icons8.com/color/96/000000/rocket.png" alt="CD">
+    <div class="card cd" onclick="window.location.href='fin.html'">
+        <img src="https://img.icons8.com/color/96/000000/rocket.png">
         <div class="title">Déploiement</div>
-        <div class="desc">Livrez automatiquement votre application en production</div>
+        <div class="desc">Livrez votre application</div>
     </div>
-</section>
-
-<!-- 🌟 Étoiles flottantes -->
-<div class="star" style="top:10%; left:15%;"></div>
-<div class="star" style="top:25%; left:70%;"></div>
-<div class="star" style="top:50%; left:40%;"></div>
-<div class="star" style="top:75%; left:60%;"></div>
-<div class="star" style="top:85%; left:20%;"></div>
+</div>
 
 <footer>
-    <p>Pipeline CI/CD – Démonstration DevOps</p>
+    <button onclick="window.location.href='index.html'">Retour</button>
 </footer>
-
-<script>
-function showPipeline() {
-    const container = document.getElementById('pipelineCards');
-    container.classList.add('show');
-    container.scrollIntoView({behavior: 'smooth'});
-}
-</script>
 
 </body>
 </html>
