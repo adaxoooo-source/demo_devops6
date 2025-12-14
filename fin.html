@@ -8,132 +8,94 @@
 <style>
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background: linear-gradient(135deg, #141e30, #243b55);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: #fff;
     text-align: center;
 }
 
-/* Header */
-header {
-    padding: 90px 20px;
-    background: linear-gradient(135deg, #00c6ff, #0072ff);
-    border-bottom-left-radius: 50% 20%;
-    border-bottom-right-radius: 50% 20%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
-header h1 {
-    font-size: 3em;
-    margin-bottom: 15px;
-}
-header p {
-    font-size: 1.3em;
-    opacity: 0.9;
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
 }
 
-/* Section résumé */
-.section {
-    padding: 60px 20px;
+.card {
+    background: rgba(255,255,255,0.15);
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    max-width: 600px;
 }
-.box {
-    max-width: 700px;
-    margin: auto;
-    background: rgba(255,255,255,0.1);
-    padding: 40px;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
-.box h2 {
+
+.card img {
+    width: 100px;
     margin-bottom: 20px;
 }
-.box p {
-    font-size: 1.1em;
-    line-height: 1.7;
+
+.card h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
-/* Boutons */
-.buttons {
-    margin-top: 40px;
+.card p {
+    font-size: 1.2em;
+    line-height: 1.7;
+    opacity: 0.95;
 }
+
+.buttons {
+    margin-top: 30px;
+}
+
 button {
-    padding: 15px 30px;
+    padding: 12px 30px;
     margin: 10px;
     border: none;
-    border-radius: 30px;
+    border-radius: 25px;
     font-size: 1em;
-    cursor: pointer;
     font-weight: bold;
-    transition: transform 0.3s;
-}
-button:hover {
-    transform: scale(1.1);
-}
-.back {
-    background: #ff9800;
-    color: #000;
-}
-.home {
-    background: #00f260;
-    color: #000;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+    color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Footer */
-footer {
-    margin-top: 60px;
-    padding: 20px;
-    opacity: 0.8;
+button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>🎉 Projet CI/CD Terminé</h1>
-    <p>Pipeline DevOps complet et fonctionnel</p>
-</header>
+<div class="container">
+    <div class="card">
+        <img src="https://img.icons8.com/color/96/000000/checked--v1.png" alt="Succès">
 
-<section class="section">
-    <div class="box">
-        <h2>✅ Résumé du projet</h2>
+        <h1>🎉 Fin du Projet</h1>
+
         <p>
-            Ce projet démontre la mise en place d’un pipeline DevOps CI/CD avec GitHub.
-            <br><br>
-            Les étapes réalisées :
-            <br>✔ Gestion du code avec Git & GitHub  
-            <br>✔ Intégration Continue avec GitHub Actions  
-            <br>✔ Construction et publication d’images Docker  
-            <br>✔ Déploiement automatisé de l’application  
-            <br><br>
-            Le pipeline permet d’automatiser le cycle de vie de l’application
-            de manière fiable et professionnelle.
+            Ce projet CI/CD démontre la mise en place d’un pipeline DevOps complet,
+            intégrant la gestion du code, l’automatisation, la conteneurisation
+            et le déploiement.
+        </p>
+
+        <p>
+            Merci pour votre temps et votre attention.<br>
+            Ce travail illustre les bases essentielles du DevOps moderne 🚀
         </p>
 
         <div class="buttons">
-            <button class="back" onclick="window.history.back()">⬅ Retour</button>
-            <button class="home" onclick="window.location.href='index.html'">🏠 Accueil</button>
+            <button onclick="window.location.href='pipeline.html'">🔄 Revoir le pipeline</button>
+            <button onclick="window.location.href='index.html'">🏠 Accueil</button>
         </div>
-       <div class="card cd" onclick="window.location.href='fin.html'">
-    <img src="https://img.icons8.com/color/96/000000/checked--v1.png" alt="Fin du projet">
-    <div class="title">Fin du Projet</div>
-    <div class="desc">
-        Merci pour votre attention.<br>
-        Pipeline CI/CD DevOps validé.
     </div>
 </div>
-
-    </div>
-</div>
-</div>
-
-</div>
-
-    </div>
-</section>
-
-<footer>
-    <p>🚀 Démonstration Pipeline CI/CD – DevOps</p>
-</footer>
 
 </body>
 </html>
