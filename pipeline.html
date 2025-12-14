@@ -77,7 +77,7 @@ header .badge:hover { transform: scale(1.1); }
 }
 .card .title {
     font-size: 1.2em;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 .card .desc {
     font-size: 0.95em;
@@ -135,42 +135,10 @@ footer {
         <div class="title">Déploiement</div>
         <div class="desc">Livrez automatiquement votre application en production</div>
     </div>
-    <div class="card cd" onclick="window.location.href='fin.html'">
-    <img src="https://img.icons8.com/color/96/000000/checked--v1.png">
-    <div class="title">Fin du Projet</div>
-    <div class="desc">Résumé et validation du pipeline</div>
-</div>
-
 </section>
 
 <footer>
-   <footer>
-   <footer class="footer-nav">
-    <button onclick="goBack()">⬅ Retour</button>
-    <button onclick="goNext()">Suivant ➡</button>
-</footer>
-
-<script>
-function goBack() {
-    window.history.back();
-}
-
-function goNext() {
-    const pages = ["git.html", "ci.html", "docker.html", "cd.html"];
-    const current = window.location.pathname.split("/").pop();
-    const index = pages.indexOf(current);
-
-    if (index !== -1 && index < pages.length - 1) {
-        window.location.href = pages[index + 1];
-    }
-}
-</script>
-
-</body>
-</html>
-
-</footer>
-
+    <p>✨ Projet <strong>demo-devops6</strong> – Réalisé par Marie 💙</p>
 </footer>
 
 </body>
