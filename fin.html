@@ -2,100 +2,28 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>🎉 Fin du Projet CI/CD</title>
+<title>🎉 Fin du Projet</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: #fff;
-    text-align: center;
-}
-
-.container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
-}
-
-.card {
-    background: rgba(255,255,255,0.15);
-    padding: 50px;
-    border-radius: 30px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-    max-width: 600px;
-}
-
-.card img {
-    width: 100px;
-    margin-bottom: 20px;
-}
-
-.card h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.card p {
-    font-size: 1.2em;
-    line-height: 1.7;
-    opacity: 0.95;
-}
-
-.buttons {
-    margin-top: 30px;
-}
-
-button {
-    padding: 12px 30px;
-    margin: 10px;
-    border: none;
-    border-radius: 25px;
-    font-size: 1em;
-    font-weight: bold;
-    cursor: pointer;
-    background: linear-gradient(135deg, #ff512f, #dd2476);
-    color: #fff;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
+body { margin:0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align:center; background:linear-gradient(135deg,#11998e,#38ef7d); color:#fff;}
+header { padding:80px 20px;}
+header h1{ font-size:3em; margin-bottom:20px;}
+header p{ font-size:1.3em; margin-bottom:30px;}
+footer{ padding:40px; font-size:1.1em;}
+button{ padding:10px 20px; margin-top:20px; font-size:1em; cursor:pointer;}
 </style>
 </head>
-
 <body>
 
-<div class="container">
-    <div class="card">
-        <img src="https://img.icons8.com/color/96/000000/checked--v1.png" alt="Succès">
+<header>
+    <h1>✅ Fin du Pipeline CI/CD</h1>
+    <p>Félicitations ! Vous avez suivi toutes les étapes de votre projet DevOps.</p>
+    <div>Merci d’avoir testé ce pipeline. 🎉</div>
+</header>
 
-        <h1>🎉 Fin du Projet</h1>
-
-        <p>
-            Ce projet CI/CD démontre la mise en place d’un pipeline DevOps complet,
-            intégrant la gestion du code, l’automatisation, la conteneurisation
-            et le déploiement.
-        </p>
-
-        <p>
-            Merci pour votre temps et votre attention.<br>
-            Ce travail illustre les bases essentielles du DevOps moderne 🚀
-        </p>
-
-        <div class="buttons">
-            <button onclick="window.location.href='pipeline.html'">🔄 Revoir le pipeline</button>
-            <button onclick="window.location.href='index.html'">🏠 Accueil</button>
-        </div>
-    </div>
-</div>
+<footer>
+    <button onclick="window.location.href='index.html'">Retour à l'accueil</button>
+</footer>
 
 </body>
 </html>
