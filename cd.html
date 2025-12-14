@@ -2,50 +2,29 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>🚀 Déploiement - Pipeline DevOps</title>
+<title>🚀 Déploiement</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-body { margin:0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align:center; background: linear-gradient(135deg, #1e3c72, #2a5298); color:#fff; }
-header { padding:70px 20px; background: linear-gradient(135deg,#ff512f,#dd2476); box-shadow:0 10px 30px rgba(0,0,0,0.3); border-bottom-left-radius:50% 20%; border-bottom-right-radius:50% 20%; }
-header h1 { font-size:3em; margin-bottom:10px; }
-header p { font-size:1.3em; opacity:0.9; }
-main { padding:50px 20px; font-size:1.1em; line-height:1.5; }
-main img { width:150px; margin-bottom:20px; }
-footer { padding:40px; background: rgba(0,0,0,0.2); font-size:1.1em; }
+body { margin:0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align:center; background:linear-gradient(135deg,#ff9800,#ef6c00); color:#fff;}
+header { padding:80px 20px;}
+header h1{ font-size:3em; margin-bottom:20px;}
+header p{ font-size:1.3em; margin-bottom:30px;}
+footer{ padding:40px; font-size:1.1em;}
+button{ padding:10px 20px; margin:5px; font-size:1em; cursor:pointer;}
 </style>
 </head>
 <body>
+
 <header>
     <h1>🚀 Déploiement</h1>
-    <p>Mise en production automatisée</p>
+    <p>Livrez automatiquement votre application en production</p>
+    <div>Votre application est maintenant accessible et opérationnelle.</div>
 </header>
-<main>
-    <img src="https://img.icons8.com/color/120/000000/rocket.png" alt="Déploiement">
-    <p>Le déploiement continu (CD) permet de livrer automatiquement les versions validées de votre application en production, réduisant les erreurs manuelles et accélérant les livraisons.</p>
-    <p>Intégrez votre pipeline CI/CD pour déployer vos applications immédiatement après un build réussi.</p>
-</main>
+
 <footer>
-  <footer class="footer-nav">
-    <button onclick="goBack()">⬅ Retour</button>
-    <button onclick="goNext()">Suivant ➡</button>
+    <button onclick="window.location.href='docker.html'">Retour</button>
+    <button onclick="window.location.href='fin.html'">Suivant</button>
 </footer>
-
-<script>
-function goBack() {
-    window.history.back();
-}
-
-function goNext() {
-    const pages = ["git.html", "ci.html", "docker.html", "cd.html"];
-    const current = window.location.pathname.split("/").pop();
-    const index = pages.indexOf(current);
-
-    if (index !== -1 && index < pages.length - 1) {
-        window.location.href = pages[index + 1];
-    }
-}
-</script>
 
 </body>
 </html>
-
