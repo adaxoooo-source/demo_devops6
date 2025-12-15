@@ -1,0 +1,49 @@
+# Script: Compactage Docker WSL VHDX - Récupère de l'espace disque
+# Auteur: Inspiré de docs officielles Docker/WSL et Stack Overflow
+# Date: 15 Décembre 2025
+
+# Étape 1: Nettoyer Docker (supprime images/conteneurs/volumes inutiles)
+Write-Host "🚀 Étape 1: Nettoyage Docker..." -ForegroundColor Green
+docker system prune -a --volumes -f  # -f pour forcer sans confirmation
+docker builder prune -a -f
+Write-Host "Nettoyage terminé. Espace libéré : $(docker system df -v)" -ForegroundColor Yellow
+
+# Étape 2: Arrêter Docker et WSL
+Write-Host "🛑 Étape 2: Arrêt de Docker et WSL..." -ForegroundColor Yellow
+# Quitte Docker Desktop via ligne de commande (alternative: ferme manuellement via tray icon)
+& "C:\Program Files\Docker\Docker\DockerCli.exe" -SwitchDaemon  # Si besoin, mais souvent pas nécessaire
+wsl --shutdown
+Write-Host "WSL arrêté." -ForegroundColor Green
+
+# Étape 3: Compactage du VHDX avec diskpart (plus sûr pour sparses)
+Write-Host "💾 Étape 3: Compactage du fichier docker_data.vhdx..." -ForegroundColor Green
+$vhdxPath = "C:\Users\[TonNom]\AppData\Local\Docker\wsl\disk\docker_data.vhdx"  # REMPLACE PAR TON CHEMIN EXACT !
+
+# Vérifier si le fichier existe
+if (-not (Test-Path $vhdxPath)) {
+    Write-Error "❌ Fichier VHDX non trouvé ! Vérifie le chemin: $vhdxPath"
+    exit 1
+}
+
+# Lancer diskpart en mode script (automatisé)
+$diskpartScript = @"
+select vdisk file="$vhdxPath"
+attach vdisk readonly
+compact vdisk
+detach vdisk
+exit
+"@
+
+# Écrire le script temporaire et l'exécuter
+$tempScript = [System.IO.Path]::GetTempFileName() + ".txt"
+$diskpartScript | Out-File -FilePath $tempScript -Encoding ASCII
+diskpart /s $tempScript
+Remove-Item $tempScript -Force
+
+Write-Host "Compactage terminé ! Vérifie la taille du fichier avec Get-Item $vhdxPath" -ForegroundColor Green
+
+# Étape 4: Redémarrer WSL et Docker
+Write-Host "🔄 Étape 4: Redémarrage..." -ForegroundColor Yellow
+wsl --status  # Vérifie que c'est OK
+Start-Process "C:\Program Files\Docker\Docker\Docker Desktop.exe"  # Redémarre Docker Desktop
+Write-Host "✅ Script terminé ! Vérifie l'espace disque libéré avec 'docker system df' ou Explorateur Windows." -ForegroundColor Green
